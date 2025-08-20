@@ -1,16 +1,16 @@
 # Slides and source code of my presentations 
 
-In this repository I have collected both the LaTeX-Beamer templates and the Julia/Python/MATLAB scripts I've used to make the presentations I gave at various conferences, seminars and poster sessions.
+In this repository I have collected both the LaTeX-Beamer templates and the Julia/Python/MATLAB scripts I've used to make some of the presentations I gave.
 
-Each subdirectory is associated one-to-one to a single talk or conference event.
+Each subdirectory is associated one-to-one to a single event such as conference presentations, seminar talks and poster sessions.
 
 The structure of each subdirectory follows this scheme:
 
 ```bash
 yy-mm-EVENT/
-├── doc/                # LaTeX source files and compiled PDF of the notes
-|   ├── abstract/       # LaTeX template and abstract code 
-|   └── presentation/   # Beamer template and slides code 
+├── doc/                # Compiled PDF of the slides and source code 
+│   ├── abstract/       # LaTeX template and abstract code 
+│   └── presentation/   # Beamer template and slides code 
 ├── inc/                # Include files collecting the source code in src/ 
 ├── sim/                # Scripts used to generate the figures in the notes
 └── src/                # Functions and modules used by the scripts in sim/ 
