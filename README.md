@@ -4,7 +4,7 @@ In this repository I have collected both the LaTeX-Beamer templates and the Juli
 
 Each subdirectory is associated one-to-one to a single event such as conference presentations, seminar talks and poster sessions.
 
-The structure of each subdirectory follows this scheme:
+The structure of each subdirectory is kept consistent in the repo and it follows this scheme:
 
 ```bash
 yy-mm-EVENT/
