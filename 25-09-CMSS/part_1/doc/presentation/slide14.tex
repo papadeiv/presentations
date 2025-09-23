@@ -1,0 +1,30 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 14
+\begin{frame}[t, label=slide14]
+        % Title
+        \frametitle{Forcing tipping as a policymaker}
+
+        % Body
+        \footnotesize
+
+        We further simplify our model by imposing $\alpha = 1 - \beta$ but  at the same time we make it non-autonomous by letting $\beta = \lambda(t) = \frac{1}{2}(\text{tanh}(\varepsilon t + \delta) + 1)$
+        \begin{equation*}
+            \dot{x}=x(1-x)(x-\lambda(t))\,. 
+        \end{equation*}
+
+        \vspace{1mm}
+
+        If we act fast enough (i.e. we pick $\varepsilon$ large) we can make some trajectories to tip to the favorable strategy.
+        
+        \vspace{4mm}
+
+        \movie[externalviewer]
+        {
+                \includegraphics<1->[keepaspectratio,width=\textwidth]{./figures/slide_14_1.png}
+        }{./figures/slide_14_2.mp4}
+
+ \end{frame}
+
+\end{document}

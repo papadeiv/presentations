@@ -1,0 +1,44 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 13
+\begin{frame}[t, label=slide13]
+        % Title
+        \frametitle{Theorem n. 3 (a sufficient condition)}
+
+        % Body
+        \footnotesize
+
+        \begin{theorem}[irreversible rate-induced tipping]\label{label=thm:r_tipping}
+            Consider a \textit{frozen} vector field $f(x,\lambda)$ and a family of parameter shifts $\Lambda_{\varepsilon}(\lambda_{-},\lambda_{+})$. Suppose states $x\to x_{\pm}$, as $\lambda\to\lambda_{\pm}$, are connected by a path $(x(s),\lambda(s))$. If there are some $\mu$ s.t. 
+            \begin{equation*}
+                    \overline{\{x(\mu)\;:\;\mu<\nu\}} \not\subset \{x_{0}\;:\;|\phi(x_{0},t) - x(\nu)|\to0\,,\;t\to\infty\} \,, 
+            \end{equation*}
+            then there is a $\varepsilon_{0}>0$ s.t. $\lim_{t\to\infty}A(t) = x_{+}$ for $\varepsilon\in(0,\varepsilon_{0})$ and $\lim_{t\to\infty}A(t) = y_{+}$ (with $y_{+}\neq x_{+}$) for $\varepsilon\in[\varepsilon_{0},+\infty)$.
+        \end{theorem}
+        
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \vspace{-6mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2->[keepaspectratio, width=\textwidth]{./figures/slide_13_1.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \vspace{-6mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<3->[keepaspectratio, width=\textwidth]{./figures/slide_13_2.png}%
+                \end{figure}
+
+       \end{columns}
+
+ \end{frame}
+
+\end{document}

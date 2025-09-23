@@ -1,0 +1,41 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 12
+\begin{frame}[t, label=slide12]
+        % Title
+        \frametitle{Non-autonomous systems}
+
+        % Body
+        \footnotesize
+
+        We need to update (generalise) our notion of local attractors for non-autonomous systems, i.e. IVPs whose ODEs have an explicit time-dependence.
+
+        \begin{definition}[Pullback attractor]\label{def:pullback_attractor}
+                Let $\dot{x} = f(x(t),t)$ be a non-autonomous system, then a family of sets $\{A(t)\}_{t\in \mathbb{R}}$ is a pullback attractor if:
+                \begin{enumerate}
+                     \item each $A(t)$ is invariant under the cocycle: $\phi_{t,s}(A(s)) = A(t)$ for all $s\leq t$;
+                     \item sets $B$ in the past limit converge in forward time: $\lim_{s\to-\infty} |\phi_{t,s}(B)-A(t)| = 0$.
+                \end{enumerate}
+        \end{definition}
+
+        \vspace{2mm}
+
+        \uncover<2->{
+                A solution cocycle $\phi_{t,s}(x_{0}) = x(t)$ is defined so that, for all $s\leq t$, it satisfies
+                \begin{equation*}
+                        (\phi_{t,s}\circ\phi_{s,u})(x_{0}) = \phi_{t,s}(x_{0})\,,\quad u<s\leq t\,.
+                \end{equation*}
+        }
+
+        \uncover<3->{
+                Under mild conditions, there is a one-to-one relation between \textit{classical} attractors $A \subset \mathbb{R}^{n}$ in the past limit autonomous system (i.e. when $t\to-\infty$) and pullback attractors $A(t)$ in the non-autonomous system.
+
+        \vspace{4mm}
+
+                Sketch: see whiteboard.
+        }
+
+ \end{frame}
+
+\end{document}

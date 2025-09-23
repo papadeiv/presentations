@@ -1,0 +1,51 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 3
+\begin{frame}[t, label=slide03]
+        % Title
+        \frametitle{Main modelling tool}
+
+        % Body
+        \footnotesize
+        $x(t)\in \mathbb{R}^{n}$ is a state variable that evolves over time.
+
+        \vspace{1mm}
+
+        $\mu\in \mathbb{R}$ is a parameter.
+
+        \vspace{1mm}
+
+        $f(x;\mu):\mathbb{R}^{n}\to\mathbb{R}^{n}$ is a family of vector fields over $x$ parametrised by $\mu$.
+
+        \uncover<2->{
+                \begin{definition}[Dynamical system]\label{def:dynamical_system}
+                        Initial value problem (IVP) made of a system of ordinary differential equations (ODEs) of the form
+                        \begin{equation*}
+                                \dot{x}=f(x;\mu)\,,
+                        \end{equation*}
+                        coupled with initial conditions of the form $x(0) = x_0$. 
+                \end{definition}
+        }
+        
+        \vspace{1mm}
+
+        \uncover<3->{
+                A forward solution of a dynamical system is a time-dependent trajectory $\phi(x_{0},t)$ propagating in the \textit{future} $t\geq0$ from $x_{0}$. Therefore $\phi(x_{0},0) = x_0$!
+        }
+
+        \vspace{1mm}
+
+        \uncover<4->{
+                If I change the initial condition $x_{0}$ I get different solutions $\phi(x_{0},t)$. The set of all solutions of a dynamical system is called the\alr{(phase) flow}.
+        }
+
+        \vspace{1mm}
+
+        \uncover<5->{
+                The long-term behaviour of a solution is determined by the asymptotic limit of its evolution, i.e. $\lim_{t\to\infty}\phi(x_{0},t)$.
+        }
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 6
+\begin{frame}[t, label=slide06]
+        % Title
+        \frametitle{Visualising equilibria}
+
+        % Body
+        \footnotesize
+
+        \begin{definition}[Equilibrium]\label{def:equilibrium}
+             A state $x^{*}\in \mathbb{R}^{n}$ is an equilibrium of a dynamical system if $f(x^{*};\mu)=0$. Since $\frac{d}{dt}\phi(x,t) = f(x;\mu)$ then $\frac{d}{dt}\phi(x^{*},t) = 0$, which implies $\phi(x^{*},t) = x^{*},\,\forall t\geq0$.
+        \end{definition}
+        
+        \vspace{4mm}
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \vspace{-5mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_06_1.png}%
+                        \includegraphics<3-4>[keepaspectratio, width=\textwidth]{./figures/slide_06_2.png}%
+                        \includegraphics<5->[keepaspectratio, width=\textwidth]{./figures/slide_06_4.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \vspace{-5mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<4>[keepaspectratio, width=\textwidth]{./figures/slide_06_3.png}%
+                        \includegraphics<5->[keepaspectratio, width=\textwidth]{./figures/slide_06_5.png}%
+                \end{figure}
+
+       \end{columns}
+
+ \end{frame}
+
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 4
+\begin{frame}[t, label=slide04]
+        % Title
+        \frametitle{An example from evolutionary game theory}
+
+        % Body
+        \footnotesize
+
+        Consider a large population of agents engaged in strategic interactions. Players are not fully rational\alr{(classical viewpoint)}but instead they adopt strategies that maximise payoff\alr{(evolutionary viewpoint)}.
+
+        \vspace{1mm}
+
+        \uncover<2->{
+                If an action is \textit{perceived} as favorable by their peers, players will tend to imitate said strategy so that succesfull behaviours spread through the population while less succesfull ones fade away over time.
+        }
+
+        \vspace{1mm}
+
+        \uncover<3->{
+                Interactions are a $2-$players, $2-$actions matrix game characterised by payoff
+
+                \begin{equation*}
+                        A = \begin{bmatrix}
+                                a && b \\
+                                c && d
+                        \end{bmatrix}\,.
+                \end{equation*}
+        }
+
+        \uncover<4->{
+                Considering $x\in[0,1]$ to be a fraction of the population, the reward for adopting one either stregy is given as a $2-$d vector
+
+                \begin{equation*}
+                        \begin{bmatrix}
+                        r_{1} \\ 
+                        r_{2} 
+                        \end{bmatrix} = 
+                        \begin{bmatrix}
+                        a && b \\
+                        c && d
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                        x \\
+                        1-x
+                        \end{bmatrix}\,.
+                \end{equation*}
+        }
+
+        \vspace{1mm}
+
+        \uncover<5->{
+                The emergent behaviour at population level is captured by a \textit{revision protocol} named the\alr{replicator equation} 
+
+                \begin{equation*}
+                        \dot{x} = x(1-x)(r_{1}(x) - r_{2}(x))\,.
+                \end{equation*}
+        }
+
+\end{frame}
+
+\end{document}

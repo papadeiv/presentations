@@ -1,0 +1,42 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 9
+\begin{frame}[t, label=slide09]
+        % Title
+        \frametitle{Back to game theory}
+
+        % Body
+        \footnotesize
+
+        Let us rewrite 
+
+        \begin{align*}
+                f(x) =&\,x(1-x)((a + d - b - c)x + (b-d)) = \nonumber \\
+                     =&\,x(1-x)((a-c)x-(d-b)(1-x)) = \nonumber \\
+                     =&\,x(1-x)(\alpha x - \beta(1-x)) \,.
+        \end{align*}
+
+        \vspace{3mm}
+
+        \uncover<2->{
+                The equilibria are thus $x_{1}=0$, $x_{2}=1$ and $x^{*}=\frac{\beta}{\beta+\alpha}$.
+        }
+
+        \vspace{5mm}
+
+        \uncover<3->{
+                We want to discard spurious solutions, therefore
+
+                \begin{equation*}
+                        x_{1}\leq x^{*}\leq x_{2}\;\Rightarrow\;\Gamma=\{(\alpha,\beta)\in \mathbb{R}^{2}\;:\;\text{sign}(\alpha)=\text{sign}(\beta)\}\,.
+                \end{equation*}
+        }
+         
+        \uncover<4->{
+                By choosing $(\alpha,\beta)\in\Gamma$ carefully we can steer our population to adopt the desired strategy (equilibrium selection). 
+        }
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 7
+\begin{frame}[t, label=slide07]
+        % Title
+        \frametitle{Theorem n. 1 (existence and uniqueness)}
+
+        % Body
+        \footnotesize
+
+        \begin{theorem}[Picard-Lindel{\"o}f]\label{thm:picard_lindelof}
+             Let $\dot{x}=f(x,t)$ with $f:\,D\subseteq \mathbb{R}^{n}\times \mathbb{R}\,\to \mathbb{R}^{n}$ continuous in $t$ and Lipschitz in $x$ and $x(t_{0})=x_{0}$ being the initial datum. Then there exist a $\delta>0$ s.t. the solution $\phi(x_{0},t_{0})$ exists and is unique on $\mathbb{B}_{\delta}(t_{0})$. 
+        \end{theorem}
+        
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                In other words, if there are two solutions $\phi_{1}$ and $\phi_{2}$ defined on the same time interval $\mathbb{B}_{\delta}(t_{0})$ stemming out from the same initial condition $x_{0}$, then $\phi_{1}=\phi_{2}$.
+
+                \vspace{-0.5mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2->[keepaspectratio, width=\textwidth]{./figures/slide_07_1.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \vspace{-5mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2->[keepaspectratio, width=\textwidth]{./figures/slide_07_2.png}%
+                \end{figure}
+
+       \end{columns}
+
+
+
+\end{frame}
+
+\end{document}

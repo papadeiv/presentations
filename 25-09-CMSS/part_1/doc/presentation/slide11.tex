@@ -1,0 +1,57 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 11 
+\begin{frame}[t, label=slide11]
+        % Title
+        \frametitle{Ok, but where's the tipping?}
+
+        % Body
+        \footnotesize
+
+        \uncover<1->{
+                \alr{Remember:}once the \textit{control} parameter is fixed, the long-term behaviour of solutions is set.
+        }
+
+        \vspace{1mm}
+
+        \uncover<2->{
+                We need somehow to embed some variability in our system. We make our parameter $\mu$ to depend explicitly on time.
+        }
+
+        \vspace{1mm}
+
+        \uncover<3->{
+                Consider a saddle-node vector field $f$ and a family of parameter shifts $\Lambda_{\varepsilon}$
+                \begin{align*}
+                        & f(x,\lambda) = -((x+a+b\lambda)^{2}+c \text{tanh}(\lambda - d))\bigg(x - \frac{k}{\text{cosh}(e\lambda)}\bigg)\,,\\
+                        & \Lambda_{\varepsilon}(\lambda_{-},\lambda_{+}) = \{\lambda(\varepsilon t)\;:\;\lambda\to\lambda_{\pm},\:t\to\pm\infty\}\,.
+                \end{align*}
+        }
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \vspace{-4mm}
+                \movie[externalviewer]
+                {
+                        \includegraphics<3>[keepaspectratio,width=\textwidth]{./figures/slide_11_1.png}
+                        \includegraphics<4->[keepaspectratio,width=\textwidth]{./figures/slide_11_3.png}
+                }{./figures/slide_11_2.webm}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \vspace{-8mm}
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<5->[keepaspectratio, width=\textwidth]{./figures/slide_11_4.png}%
+                \end{figure}
+
+       \end{columns}
+
+\end{frame}
+
+\end{document}
