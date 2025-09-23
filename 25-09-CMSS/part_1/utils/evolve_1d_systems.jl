@@ -12,11 +12,6 @@ Date: 21-08-2025
 #                          #
 #--------------------------#
 
-"""
-    evolve_1d(f, η, μ, u0; kwargs...)
-
-Solves an IVP for an SDE in 1-dimension from initial condition `u0` with drift `f` and diffusion `η` at parameter value `μ`.
-"""
 function evolve_1d(f::Function, η::Function, μ, u0::Vector; δt=1e-2, saveat=δt, Nt=1000::Int64, Ne=1::Int64)
         # Compute the total time 
         T = δt*Nt
@@ -56,11 +51,6 @@ function evolve_1d(f::Function, η::Function, μ, u0::Vector; δt=1e-2, saveat=�
                )
 end
 
-"""
-    evolve_shifted_1d(f, Λ, η, u0, T; kwargs...)
-
-Solves a non-autonomous IVP in 1-d with drift `f`, shift `Λ` and diffusion `η` starting from initial condition `u0` in time interval `T`.
-"""
 function evolve_shifted_1d(f::Function, Λ::Function, η::Function, u0::Vector, T::Vector; Nt=1000::Int64, saveat=nothing)
         # Compute the timestep
         δt = (T[end]-T[1])/Nt
@@ -106,11 +96,6 @@ function evolve_shifted_1d(f::Function, Λ::Function, η::Function, u0::Vector, 
                )
 end
 
-"""
-    evolve_shifted_1d(f, Λ, η, u0, T; kwargs...)
-
-Overload of the above function evolving an ensemble of non-autonomous SDEs with linear shift `Λ(t) = μ0 + εt` between parameter values `μ0 = u0[2]` and `μf` rather than a between two time instants.
-"""
 function evolve_shifted_1d(f::Function, Λ::Function, η::Function, u0::Vector, μf::Float64; δt=1e-2, saveat=δt, Ne=1::Int64)
         # Specify the simulation endtime and number of timesteps according to the parameter range
         T = (μf-u0[2])/Λ(0)

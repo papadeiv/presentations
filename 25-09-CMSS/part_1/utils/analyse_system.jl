@@ -12,12 +12,6 @@ Date: 21-08-2025
 #                       #
 #-----------------------#
 
-"""
-    get_equilibria(f, μ; domain)
-
-Given a vector field `f` and its bifurcation parameter `μ` find all its equilibria and their stability.
-Detailed description.
-"""
 function get_equilibria(f::Function, μ::Float64; domain=[-Inf,Inf])
         # Reduce the parameter dependent dynamics to a 1D scalar function
         F(x) = f(x, μ)
@@ -48,12 +42,6 @@ function get_equilibria(f::Function, μ::Float64; domain=[-Inf,Inf])
                ) 
 end
 
-"""
-    get_equilibria(f; domain)
-
-Overload of `get_equilibria` to find the roots of a vector field `f` that does not have an explicit dependence on the bifurcation parameter.
-Detailed description.
-"""
 function get_equilibria(f::Function; domain=[-Inf,Inf])
         # Find the zeros of the function in the specified interval
         equilibria = find_zeros(f, domain[1], domain[2])
@@ -81,11 +69,6 @@ function get_equilibria(f::Function; domain=[-Inf,Inf])
                ) 
 end
 
-"""
-    get_equilibria(f1, f2; kwargs...)
-
-Overload of `get_equilibria` to find the roots of a 2-dimensional vector field with components `f1` and `f2` at parameter `μ`.
-"""
 function get_equilibria(f1::Function, f2::Function, μ::Float64; guesses=[[-10.0, -10.0], [0, 0], [-2.0, -2.0], [2.0, 2.0]])
         # Redine unparametrised vector field
         f(x,y) = f1(x,y,μ)

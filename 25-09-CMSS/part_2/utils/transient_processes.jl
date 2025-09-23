@@ -12,11 +12,6 @@ Date: 03-09-2025
 #                            #
 #----------------------------#
 
-"""
-    detrend(timestamps, timeseries; kwargs...)
-
-Removes the trend from a `timeseries` and computes the stationary residuals.
-"""
 function detrend(timeseries; alg = "exact", timestamps = Float64[], qse = Float64[])
         # Initialise arrays for the trend and the residuals
         trend = Float64[]
@@ -29,6 +24,15 @@ function detrend(timeseries; alg = "exact", timestamps = Float64[], qse = Float6
                 # Remove the trend to find the residuals
                 residuals = timeseries - trend 
 
+        elseif alg == "linear"
+                # Assemble the model matrix
+                X = hcat(ones(length(timestamps)), timestamps)
+                # Solve the least-squares problem
+                c = X\timeseries
+                # Compute the linear trend and the residuals
+                trend = X*c
+                residuals = timeseries - trend
+
         else alg == "exact"
                 trend = qse 
                 residuals = timeseries - trend
@@ -40,11 +44,6 @@ function detrend(timeseries; alg = "exact", timestamps = Float64[], qse = Float6
                )
 end
 
-"""
-    get_window_parameters(Nt, width)
-
-Compute the number of timesteps in a window of `width` relative size w.r.t. a total of `Nt` timesteps and the number of strides.
-"""
 function get_window_parameters(Nt::Int64, width::Float64)
         # Compute the size Nw of the window
         Nw = convert(Int64, floor(width*Nt))
@@ -59,11 +58,6 @@ function get_window_parameters(Nt::Int64, width::Float64)
                )
 end
 
-"""
-    find_tipping(ut; check=0.1, criterion=0.1)
-
-Identify the tipping point in a timeseries `u` by checking the deviation of the last `criterion` realisations away from the mean of the first `check` realisations.
-"""
 function find_tipping(ut::Vector{Float64}; check = 0.100::Float64, criterion = 0.010::Float64)
         # Get the length of the timeseries
         Nt = length(ut)

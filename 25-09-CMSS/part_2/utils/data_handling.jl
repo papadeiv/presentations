@@ -12,11 +12,6 @@ Date: 14-09-2025
 #                      #
 #----------------------#
 
-"""
-    readCSV(filename)
-
-Import data from a .csv `filename` without header and as a Matrix.
-"""
 function readCSV(filename)
         # Give full path to the reader
         fullpath = "../../res/data/" * filename 
@@ -41,14 +36,9 @@ function readCSV(filename)
         return data 
 end
 
-"""
-    writeCSV(data, filename)
-
-Export a Matrix `data` into a .csv `filename` without header.
-"""
 function writeCSV(data, filename)
         # Create the export directory if it does not exists
-        fullpath = "../../res/data/" * path 
+        fullpath = "../../res/data/"*filename 
         mkpath(dirname(fullpath))
         # Write the input data to a csv file
         CSV.write(fullpath, Tables.table(data), delim=',', writeheader=false)

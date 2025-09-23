@@ -12,11 +12,6 @@ Date: 29-08-2025
 #                       #
 #-----------------------#
 
-"""
-    makefig(; kwargs)
-
-Generate a `Figure` and `Axis` struct given input parameters.
-"""
 function makefig(;
                size = [1000,1000],
                alpha = 1.0,
@@ -130,11 +125,6 @@ function makefig(;
         return fig, ax
 end
 
-"""
-    savefig(path, fig)
-
-Export the figure `fig` at the specified `path`.
-"""
 function savefig(path, fig)
         # Create the export directory if it doesn't exist
         fullpath = "../../res/fig/" * path 

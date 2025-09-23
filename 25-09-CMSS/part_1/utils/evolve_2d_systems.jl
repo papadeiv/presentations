@@ -12,11 +12,6 @@ Date: 21-08-2025
 #                          #
 #--------------------------#
 
-"""
-    evolve_2d()
-
-Solves an IVP for an SDE in 2-dimensions from initial condition `u0` with drift `f1` and `f2` and diffusion `η1` and `η2` at parameter value `μ`.
-"""
 function evolve_2d(f1::Function, f2::Function, η1::Function, η2::Function, μ::Float64, u0::Vector{Float64}; δt=1e-2, Nt=1000::Int64)
         # Compute the total time 
         T = δt*Nt
@@ -52,11 +47,6 @@ function evolve_2d(f1::Function, f2::Function, η1::Function, η2::Function, μ:
                )
 end
 
-"""
-    evolve_shifted_2d()
-
-Solves a non-autonomous IVP in 2-dimensions with drift `f1`, `f2`, shift `Λ` and diffusion `η1`, `η1` starting from initial condition `u0` in time interval `T`.
-"""
 function evolve_shifted_2d(f1::Function, f2::Function, Λ::Function, η1::Function, η2::Function, u0, T; Nt=1000::Int64, saveat=nothing)
         # Compute the timestep
         δt = (T[end]-T[1])/Nt
