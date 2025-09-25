@@ -1,0 +1,68 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 10
+\begin{frame}[t, label=slide10]
+        % Title
+        \frametitle{Predictive skill of an EWS}
+
+        % Body
+        \footnotesize
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \vspace{-2mm}
+
+                How do I tackle higher dimensions?
+
+                \vspace{5mm}
+
+                \uncover<2->{
+
+                        Consider a saddle-node normal form in $2-$dimensions
+
+                        \begin{equation*}
+                                \begin{cases}
+                                        dx_{t} = -\mu(t) - x_{t}^{2} + \sigma dW_{t}\,, \\
+                                        dy_{t} = -y_{t} + \sigma dW_{t}\,.
+                                \end{cases}
+                        \end{equation*}
+                }
+
+                \vspace{4mm}
+
+                \uncover<3->{
+                        Choose a scalar observable $\psi(x_{t},y_{t}) =: \psi_{t}$ that exhibits tipping.
+                }
+
+                \vspace{5mm}
+
+                \uncover<4->{
+                        The predictive skill of the increase in variance EWS depends on how well the designed observable capture CSD.
+                }
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \vspace{-7mm}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<3->[keepaspectratio, width=0.85\textwidth]{./figures/slide_10_1.png}%
+                \end{figure}
+
+                \vspace{-6mm}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<4->[keepaspectratio, width=0.85\textwidth]{./figures/slide_10_2.png}%
+                \end{figure}
+
+       \end{columns}
+
+\end{frame}
+
+\end{document}

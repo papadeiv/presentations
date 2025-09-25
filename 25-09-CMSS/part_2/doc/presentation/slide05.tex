@@ -1,0 +1,66 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 5
+\begin{frame}[t, label=slide05]
+        % Title
+        \frametitle{Characterising saddle-node bifurcations}
+
+        % Body
+        \footnotesize
+
+        Let $\boldsymbol{x}_{\mu}=[x_{\mu},y_{\mu}]\in \mathbb{R}^{2}$ be a stable equilibrium of $f(x,y;\mu)$ at parameter value $\mu$ and $\lambda_{1},\lambda_{2}$ be the eigenvalues of the linearised system $D_{\boldsymbol{x}}f(x_{\mu},y_{\mu})$.
+
+        \vspace{2mm}
+
+        Then (per Hartman-Grobman) the flow close to $\boldsymbol{x}_{\mu}$ is approximated by
+
+        \begin{equation*}
+            \boldsymbol{x}(t) = \boldsymbol{x}_{0} + c_{1}e^{\lambda_{1}t}\boldsymbol{x}_{1} + c_{2}e^{\lambda_{2}t}\boldsymbol{x}_{2}\,. 
+        \end{equation*}
+
+        \vspace{5mm}
+
+        \uncover<2->{
+                Consider a planar saddle-node normal form
+
+                \begin{equation*}
+                   \begin{cases}
+                           \dot{x} = -\mu - x^{2}\,, \\
+                           \dot{y} = - \alpha y\,.
+                   \end{cases}
+                \end{equation*}
+        }
+
+        \uncover<3->{
+                Equilibria (for all $\mu<0$ and $\alpha>0$):
+
+                \uncover<4->{
+                        \begin{equation*}
+                                \uncover<5->{
+                                        \text{\textbf{(stable node)}}
+                                }
+                                \quad\quad\boldsymbol{x}_{\mu}^{(1)} = \begin{bmatrix}
+                                        +\sqrt{-\mu} \\
+                                        0
+                                \end{bmatrix}\,,\quad \lambda_{1}^{(1)} = -2\sqrt{-\mu}<0\,,\;\lambda_{2}^{(1)} = -\alpha<0\,; 
+                        \end{equation*}
+                                        
+                }
+
+                \uncover<6->{
+                        \begin{equation*}
+                                \uncover<7->{
+                                        \text{\textbf{(saddle)}}
+                                }
+                                \quad\quad\boldsymbol{x}_{\mu}^{(2)} = \begin{bmatrix}
+                                        -\sqrt{-\mu} \\
+                                        0
+                                \end{bmatrix}\,,\quad \lambda_{1}^{(2)} = + 2\sqrt{-\mu}>0\,,\;\lambda_{2}^{(2)} = -\alpha<0\,; 
+                        \end{equation*}
+                }
+        }
+
+\end{frame}
+
+\end{document}

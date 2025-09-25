@@ -1,0 +1,33 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 18
+\begin{frame}[t, label=slide18]
+        % Title
+        \frametitle{Transformations of random variables}
+
+        % Body
+        \footnotesize
+
+        The local minima and maxima of a cubic polynomial $V(x) = c_{1}x + c_{2}x^{2} + c_{3}x^{3}$ are given by
+
+        \begin{equation*}
+                x_{\text{stb,uns}} = \pm \frac{1}{3c_{3}}\bigg(\sqrt{c_{2}^{2}-3c_{3}c_{1}}\mp c_{2}\bigg) \,.
+        \end{equation*}
+        
+        So $x_{\text{stb,uns}}$ are nonlinear transformations of the r.v. $\boldsymbol{c}=[c_{1}, c_{2}, c_{3}]^{T}$ which is a solution of the nonlinear least-square problem.
+
+        \vspace{2mm}
+
+        \uncover<2->{
+                $V(x_{\text{stb,uns}})$ is another nonlinear map of the r.v.s and, on top of that, we also want to compute $\pprime{V}(x_{\text{stb,uns}}) = 2c_{2} + 6c_{3}x_{\text{stb,uns}}$ and $\exp(-\Delta V)$.
+        }
+
+        \begin{figure}[H]
+                \centering 
+                \includegraphics<3->[keepaspectratio, width=0.65\textwidth]{./figures/slide_18.png}%
+        \end{figure}
+
+\end{frame}
+
+\end{document}

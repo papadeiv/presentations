@@ -1,0 +1,49 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 8
+\begin{frame}[t, label=slide08]
+        % Title
+        \frametitle{The first early-warning signal (EWS)}
+
+        % Body
+        \footnotesize
+
+        The stationary, linear system $dx_{t} = -2\sqrt{-\mu}x_{t}dt + \sigma dW_{t}$ is an\alr{Ornstein-Uhlenbeck process (OUP)}with covariance between timesteps $s,t$
+
+        \begin{equation*}
+                 \text{Cov}[x_{s},x_{t}] = \frac{\sigma^{2}}{4\sqrt{-\mu}}e^{-2\sqrt{-\mu}(t-s)}\,,\quad s<t\,.
+        \end{equation*}
+
+        \vspace{3mm}
+       
+        \uncover<2->{
+                If I consider instantaneous changes (i.e. $t\to s$) then 
+
+                \begin{equation*}
+                        \text{Cov}[x_{s},x_{t}]\to\text{Var}[x_{t}]=\frac{\sigma^{2}}{4\sqrt{-\mu}}\,.
+                \end{equation*}
+        }
+        \vspace{3mm}
+
+        \uncover<3->{
+                If I'm far from the saddle-node bifurcation (i.e. $\mu\to-\infty$) then
+
+                \begin{equation*}
+                        \text{Var}[x_{t}]\to0\,.
+                \end{equation*}
+        }
+
+        \vspace{3mm}
+       
+        \uncover<4->{
+                If I'm approaching the bifurcation (i.e. $\mu\to0$) then
+
+                \begin{equation*}
+                        \text{Var}[x_{t}]\to\infty\,.
+                \end{equation*}
+        }
+
+\end{frame}
+
+\end{document}

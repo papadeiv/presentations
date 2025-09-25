@@ -1,0 +1,62 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 3
+\begin{frame}[t, label=slide03]
+        % Title
+        \frametitle{Where is the tipping point?}
+
+        % Body
+        \footnotesize
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<1>[keepaspectratio, width=\textwidth]{./figures/slide_03_1.png}%
+                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_03_2.png}%
+                        \includegraphics<3-7>[keepaspectratio, width=\textwidth]{./figures/slide_03_3.png}%
+                        \includegraphics<8>[keepaspectratio, width=\textwidth]{./figures/slide_03_4.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \vspace{4mm}
+
+                \uncover<4->{
+                        Assuming that the trend is determined by a saddle-node normal form
+                        \begin{equation*}
+                                \begin{cases}
+                                        \dot{x} = f(x,\mu) = -\mu - x^2\,, \\
+                                        \mu(t) = \mu_{0} + \varepsilon t\,. 
+                                \end{cases}
+                        \end{equation*}
+                }
+
+                \uncover<5->{
+                        The equilibria of the frozen system are
+                        \begin{equation*}
+                                x_{\text{stb},\text{uns}} = \pm\sqrt{-\mu}\,,\quad\mu\leq0\,.
+                        \end{equation*}
+                }
+
+                \uncover<6->{
+                        Linear stability is prescribed by
+                        \begin{equation*}
+                                \lambda = \newprime{f}(x=x_{\text{stb},\text{uns}},\mu) = \mp2\sqrt{-\mu}\,.
+                        \end{equation*}
+                }
+
+       \end{columns}
+
+       \uncover<7->{
+                        The saddle-node (or fold) bifurcation at $\mu=0$ causes $x_{\text{stb}}=x_{\text{uns}}$ and for $\mu>0$ no local nor global attractor is left in phase space.
+       }
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 4
+\begin{frame}[t, label=slide04]
+        % Title
+        \frametitle{Taxonomy of tipping points}
+
+        % Body
+        \footnotesize
+
+        Consider the following It\^{o} process
+
+        \begin{equation*}
+           \begin{cases}
+               dx_{t} = f(x_{t},\mu(t))dt + \eta(x_{t})dW_{t}\,, \\
+               \mu(t) = g(\varepsilon t)\,, 
+           \end{cases}
+        \end{equation*}
+        
+        where $f(x_{t},\mu)$ is the\alr{drift}(non-autonomous deterministic dynamics), $\eta(x_{t})$ is the\alr{diffusion}(stochastic fluctuations), $g(\varepsilon t)$ is the\alr{shift}(time-evolution of the parameter) and $W_{t}$ is Brownian motion.
+
+        \vspace{3mm}
+
+        Let's assume that $f(x;\mu)$ as at least one attractor $x_{\mu}$, in the frozen system at paramater value, $\mu$ with $\mathbb{B}(x_{\mu})$ being its basin of attraction.
+
+        \uncover<2->{
+                \begin{definition}[non-rigorous]\label{def:tipping_points}
+                        We say that a sample path $x_{t} = x_{0} + \int_{0}^{t}\eta(x_{s})dW_{s} + \int_{0}^{t} f(x_{s},g(s))ds$ undergoes
+                        \begin{itemize}
+                                \uncover<3->{
+                                        \item \textbf{R-tipping} if, in the deterministic limit $\eta\to0$, there is a finite $T>0$ s.t. $x_{T}\not\in \mathbb{B}(x_{\mu})$;
+                                }
+                                \uncover<4->{
+                                        \item \textbf{N-tipping} if, in the singular limit $\varepsilon\to0$, there is a finite $T>0$ s.t. $x_{T}\not\in \mathbb{B}(x_{\mu})$;
+                                }
+                                \uncover<5->{
+                                        \item \textbf{B-tipping} if there is a finite $T>0$ s.t. $x_{\mu}$ changes stability or no longer exists.
+                                }
+                        \end{itemize}
+                \end{definition}
+        }
+
+\end{frame}
+
+\end{document}

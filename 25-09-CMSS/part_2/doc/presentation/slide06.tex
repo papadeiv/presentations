@@ -1,0 +1,40 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 6
+\begin{frame}[t, label=slide06]
+        % Title
+        \frametitle{Characterising saddle-node bifurcations}
+
+        % Body
+        \footnotesize
+
+        A solution starting nearby $\boldsymbol{x}_{\mu}^{(1)}$ will converge to it in forward time approximately like
+
+        \begin{equation*}
+                \boldsymbol{x}(t) = \begin{bmatrix}
+                     x(t) \\
+                     y(t)
+                \end{bmatrix} =  
+                \begin{bmatrix}
+                     x_{0} \\
+                     y_{0}
+                \end{bmatrix} +  
+                c_{1}^{(1)}e^{-2\sqrt{-\mu}t}\begin{bmatrix}
+                     1 \\
+                     0
+                \end{bmatrix} + 
+                c_{2}^{(1)}e^{-\alpha{t}}\begin{bmatrix}
+                     0 \\
+                     1
+                \end{bmatrix}
+        \end{equation*}
+
+        \begin{figure}[H]
+                \centering 
+                \includegraphics<2->[keepaspectratio, width=0.5\textwidth]{./figures/slide_06.png}%
+        \end{figure}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 11 
+\begin{frame}[t, label=slide11]
+        % Title
+        \frametitle{Transition probabilities}
+
+        % Body
+        \footnotesize
+
+        Consider a conservative system $f(x;\mu) = -\nabla V(x;\mu)$ where $V$ is a scalar potential of the state's variables.
+
+        \vspace{2mm}
+
+        \uncover<2->{
+                The stochastic evolution of an observable $x\in \mathbb{R}$ under $f$ is in analogy with the motion of an overdamped particle in a potential $V$ subject to noisy diffusion (Langevin equation)
+
+                \begin{equation*}
+                        dx_{t} = -\newprime{V}(x_{t};\mu)dt + \sigma dW_{t}\,.
+                \end{equation*}
+        }
+
+        \vspace{1mm}
+
+        \uncover<3->{
+                Given $x_{0}\in \mathbb{R}$ the transition probability $p(x,t|x_{0},0)$ is described, over the state space, by the solution of the Fokker-Plank (or forward Kolmogoroff) equation
+                \begin{equation*}
+                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,,\quad D = \frac{\sigma^{2}}{2}\,. 
+                \end{equation*}
+        }
+
+        \vspace{1mm}
+
+        \uncover<4->{
+                Let $\mu\in \mathbb{R}$ be fixed over $\Delta t >> 0$; if $\frac{\Delta p}{\Delta t}\approx 0$ (i.e. I ignore the transient regime) then my particle's transition probability solves the second-order IVP
+
+                \begin{equation*}
+                   \begin{cases}
+                       D \pprime{p} + \pprime{V}p + \newprime{V}\newprime{p} = 0\,, \\
+                       \newprime{p}(\pm\infty) = 0\,.
+                   \end{cases}
+                \end{equation*}
+        }
+
+\end{frame}
+
+\end{document}

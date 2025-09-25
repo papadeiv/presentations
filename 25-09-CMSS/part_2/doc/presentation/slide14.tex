@@ -1,0 +1,50 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 14
+\begin{frame}[t, label=slide14]
+        % Title
+        \frametitle{Escape from a potential well}
+
+        % Body
+        \footnotesize
+
+        Consider stochastic diffusion of a particle under gradient flows confined in $V$.
+
+        \vspace{2mm}
+
+        The potential has a local minima in $x=a$ and a local maxima in $x=b<a$.
+
+        \vspace{2mm}
+
+        \uncover<2->{
+                A\alr{tipping event}is manifested when a particle, sitting in the basin of $x=a$ (i.e. the well), escapes said basin by \textit{hitting} the boundary in $x=b$.
+        }
+
+        \vspace{2mm}
+
+        \uncover<3->{
+                The\alr{escape time}$T_{a\to b}$ of the particle follows a first passage time law as we saw earlier. In particular it is the solution of
+                \begin{equation*}
+                   \begin{cases}
+                       -1 = \mathcal{L}^{\dagger}T = -\newprime{V}\newprime{T}+D \pprime{T}\,, \\
+                       \newprime{T}(a) = 0 \,, \\
+                       T(b) = 0 \,. \\
+                   \end{cases}
+                \end{equation*}
+        }
+
+        \uncover<4->{
+                The\alr{escape rate}$r_{a\to b}$ (inverse of $T_{a\to b}$) can be derived as a \textbf{large deviation principle} by formulating the escape problem as a \textit{rare event}
+                \begin{equation*}
+                     r_{a\to b} = C\,\mathbb{P}(x_{t}\not\in(b,+\infty)) = C\,\exp(-\Delta V)\,,
+                \end{equation*}
+
+                \vspace{2mm}
+
+                $C=\frac{1}{2\pi}\sqrt{|\pprime{V}(b)|\pprime{V}(a)}$ is a prefactor from statistical physics (Kramers' formula) and is obtained by solving the above IVP for $T_{a\to b}$.
+        }
+
+\end{frame}
+
+\end{document}

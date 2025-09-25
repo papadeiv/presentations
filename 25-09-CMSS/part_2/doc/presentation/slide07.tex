@@ -1,0 +1,55 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 7
+\begin{frame}[t, label=slide07]
+        % Title
+        \frametitle{Critical slowing down}
+
+        % Body
+        \footnotesize
+
+        Let's look at the linearised saddle-node system close to $\boldsymbol{x}_{\mu}^{(1)}$ but now let's inject additive Brownian noise with standard deviation $\sigma>0$
+
+        \begin{equation*}
+           \begin{cases}
+                   dx_{t} = -2\sqrt{-\mu}x_{t}dt + \sigma dW_{t}\,, \\
+                   dy_{t} = -\alpha y_{t}dt + \sigma dW_{t} \,.
+           \end{cases}
+        \end{equation*}
+
+        \uncover<2->{
+                Let's pick $\alpha=2\sqrt{-\mu}$ so that the decay rate is uniform in both $x_{t}$ and $y_{t}$.
+        }
+
+        \uncover<4->{
+                Consider a circular region $\mathcal{B}_{\rho}(\boldsymbol{x}_{\mu}^{(1)})\subset \mathbb{R}^{2}$. How much time until my particles \textit{hit} $\mathcal{B}$?
+        }
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                        \begin{figure}[H]
+                                \centering 
+                                \includegraphics<3-4>[keepaspectratio, width=0.75\textwidth]{./figures/slide_07_1.png}%
+                                \includegraphics<5->[keepaspectratio, width=0.75\textwidth]{./figures/slide_07_2.png}%
+                        \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                        \vspace{-2mm}
+
+                        \begin{figure}[H]
+                                \centering 
+                                \includegraphics<6>[keepaspectratio, width=0.79\textwidth]{./figures/slide_07_3.png}%
+                                \includegraphics<7>[keepaspectratio, width=0.79\textwidth]{./figures/slide_07_4.png}%
+                        \end{figure}
+
+       \end{columns}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 13
+\begin{frame}[t, label=slide13]
+        % Title
+        \frametitle{Large deviation theory}
+
+        % Body
+        \footnotesize
+
+        In the field of statistical theory and stochastic processes a \textit{rare event} $E$ happens with probability exponentially small, with rate $I(E)$, in an asymptotic limit 
+
+        \begin{equation*}
+             \mathbb{P}(E)\sim\exp(-I(E)\tau)\,,\quad\tau\to\infty\,,
+        \end{equation*}
+
+        \uncover<2->{
+                For SDEs, a rare event is a significant deviation a time $T>0$ of a sample path $x_{t}$ from the trajectory $\phi(x_{0},t)$ of the deterministic limit (called the\alr{typical trajectory}).
+        }
+
+        \uncover<3->{
+                \begin{theorem}[Freidlin-Wentzell]\label{thm:freidlin-wentzell}
+                        Let $X^{D}:=\{x_{t}^{D}\;:\;t\in[0,T]\}$ be a sample path solving $dx_{t} = f(x_{t})dt + \sqrt{2D}dW_{t}$ over the time interval $[0,T]$, then the family of paths $\{X^{D}\}_{D>0}\subset \mathcal{C}([0,T];\mathbb{R})$ satisfy a large deviation principle
+                        \begin{equation*}
+                             \mathbb{P}(X^{D}\approx\phi)\sim\exp\bigg(-\frac{1}{2D}I(\phi(x_{0},t))\bigg)\,,
+                        \end{equation*}
+
+                        with rate function
+
+                        \begin{equation*}
+                             I(\phi(x_{0},t)) = 
+                                \begin{cases}
+                                        \frac{1}{2}\int_{0}^{T}|\dot{\phi} - f(\phi)|^{2}dt\,,\quad \text{if}\;\phi\in H^{1}\,, \\
+                                    +\infty\,,\quad \text{otherwise}\,. 
+                                \end{cases}
+                        \end{equation*}
+                \end{theorem}
+        }
+\end{frame}
+
+\end{document}
