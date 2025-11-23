@@ -1,0 +1,49 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 10
+\begin{frame}[t, label=slide10]
+        % Title
+        \frametitle{A numerical method to predict tipping}
+
+        % Body
+        \footnotesize
+
+        \begin{algorithm}[H]
+                \KwIn{timeseries $x_{t}$ over $\Delta t > 0$, threshold $>0$}
+
+                \BlankLine
+
+                define $V_{*}(x,\boldsymbol{c}) = \boldsymbol{c[1]}x + \boldsymbol{c[2]}x^{2} + \boldsymbol{c[3]}x^{3}$\;
+                define $\rho(x,\boldsymbol{c})=\exp(-V(x,\boldsymbol{c}))$\;
+
+                \BlankLine
+                \BlankLine
+
+                residuals = detrend($x_{t}$, $\Delta t$)\;
+                histogram = fit(residuals)\;
+
+                \BlankLine
+
+                \While{$\text{error}>\text{threshold}$}{
+                        guess = solve\_lls($p(x)$, histogram) + rand(3)\;
+                        $p(x) = \text{normalise}(\rho(x,\text{guess}))$\;
+                        solution = solve\_nlls($p(x)$, histogram, guess)\;
+                        error = $\int_{}^{}(\rho(x,\text{solution}) - \text{histogram})^{2}dx$
+                }
+
+                \BlankLine
+
+                a, b = compute\_extrema($V_{*}(x, \text{guess})$)\;
+                \alr{ews}= $\frac{1}{2\pi}\sqrt{|\pprime{V_{*}}(b, \text{guess})|\pprime{V_{*}}(a, \text{guess})}\exp(-(V_{*}(b, \text{guess})-V_{*}(a, \text{guess})))$\;
+
+                \BlankLine
+                \BlankLine
+
+                \KwOut{escape rate\alr{ews}from the minima $a$ of $V_{*}$}
+        \end{algorithm}
+
+
+\end{frame}
+
+\end{document}

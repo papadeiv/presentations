@@ -1,24 +1,81 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 7
-\begin{frame}[label=slide07]
+% Slide # 5
+\begin{frame}[t, label=slide05]
         % Title
-        \frametitle{Literature on critical transitions}
+        \frametitle{Critical slowing down (CSD)}
 
         % Body
-        \nocite{*}
-        \bibliography{references}
-        \bibliographystyle{amsplain}
+        \footnotesize
 
-        \vspace{1cm}
+        Consider the deterministic limit of the noisy saddle-node normal form in $2-$D
 
-        Thank you.
+        \begin{equation*}
+                \begin{cases}
+                        \dot{x} = -\mu - x^{2}\,, \\
+                        \dot{y} = - \alpha y\,,
+                \end{cases}
+        \end{equation*}
 
-        \bigskip
+        with a \textbf{stable node} $\boldsymbol{x}_{\mu}^{(1)} = [\sqrt{-\mu},0]^{T}$ and a \textbf{saddle} $\boldsymbol{x}_{\mu}^{(2)} = [-\sqrt{-\mu},0]^{T}$ equilibria.
+ 
+        \uncover<2->{
+                Then (per Hartman-Grobman) the flow close to $\boldsymbol{x}_{\mu}^{(1)}$ is well approximated by
 
-        \hyperlink{slide02}{\beamergotobutton{Go to the beginning}}
-        \hyperlink{slide03}{\beamergotobutton{Go to the algorithm}}
+                \begin{equation*}
+                \boldsymbol{x}(t) = \begin{bmatrix}
+                     x(t) \\
+                     y(t)
+                \end{bmatrix} =  
+                \begin{bmatrix}
+                     x_{0} \\
+                     y_{0}
+                \end{bmatrix} +  
+                c_{1}^{(1)}e^{-2\sqrt{-\mu}t}\begin{bmatrix}
+                     1 \\
+                     0
+                \end{bmatrix} + 
+                c_{2}^{(1)}e^{-\alpha{t}}\begin{bmatrix}
+                     0 \\
+                     1
+                \end{bmatrix}\,.
+                \end{equation*}
+        }
+
+        \uncover<3->{
+                Let's pick $\alpha = 2\sqrt{-\mu}$ and inject additive white noise with standard deviation $\sigma>0$.
+        } 
+
+        \uncover<4->{
+                Consider a circular region $\mathcal{B}_{\rho}(\boldsymbol{x}_{\mu}^{(1)})\subset \mathbb{R}^{2}$. How much time until my particles \textit{hit} $\mathcal{B}$?
+        }
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                        \vspace{-1.5mm}
+
+                        \begin{figure}[H]
+                                \centering 
+                                \includegraphics<3>[keepaspectratio, width=0.525\textwidth]{./figures/slide_05_1.png}%
+                                \includegraphics<4->[keepaspectratio, width=0.525\textwidth]{./figures/slide_05_2.png}%
+                        \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                        \vspace{-3mm}
+
+                        \begin{figure}[H]
+                                \centering 
+                                \includegraphics<5>[keepaspectratio, width=0.55\textwidth]{./figures/slide_05_3.png}%
+                                \includegraphics<6>[keepaspectratio, width=0.55\textwidth]{./figures/slide_05_4.png}%
+                        \end{figure}
+
+       \end{columns}
 
 \end{frame}
 

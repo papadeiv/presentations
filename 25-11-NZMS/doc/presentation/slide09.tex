@@ -1,0 +1,48 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 9
+\begin{frame}[t, label=slide9]
+        % Title
+        \frametitle{Stationary equilibrium distribution}
+
+        % Body
+        \footnotesize
+
+        I can reduce the $1-$D (state variable $p$) second-order ODE to a $2-$D (state variables $p$ and $\newprime{p}$) first-order system of ODEs. 
+
+        \vspace{3mm}
+
+        I can then solve for $p(x)$ using an integration factor and integration-by-parts to get a\alr{stationary equilibrium density}$p(x) = N\,e^{-\frac{V(x)}{D}}$.
+
+        \vspace{3mm}
+
+        \uncover<2->{
+                Consider a cubic saddle-node system $f(x;\mu) = -\mu(t) - 2x + 3x^{2} - 0.8x^{3}$ at $\mu\in \mathbb{R}$ s.t. the quartic potential has $2$, well separated local minima and a local maxima.
+        }
+
+        \begin{columns}[T]
+                
+                \column{0.32\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_09_1.png}%
+                        \includegraphics<3-4>[keepaspectratio, width=\textwidth]{./figures/slide_09_2.png}%
+                        \includegraphics<5->[keepaspectratio, width=\textwidth]{./figures/slide_09_4.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.68\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<4->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_3.png}%
+                \end{figure}
+
+       \end{columns}
+
+\end{frame}
+
+\end{document}

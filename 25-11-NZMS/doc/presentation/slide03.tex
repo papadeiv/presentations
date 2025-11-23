@@ -4,52 +4,42 @@
 % Slide # 3
 \begin{frame}[t, label=slide03]
         % Title
-        \frametitle{Critical transitions and warning signs}
+        \frametitle{The first early-warning signal (EWS)}
 
         % Body
         \footnotesize
-        \begin{definition}
-                Early warning signals (EWSs) are simple properties that \textbf{change in characteristic ways} prior to a critical transition.
-        \end{definition}
+        
+        Consider the following Itô process with additive white noise (i.e. $\sigma>0$)
 
-        \begin{columns}[T]
+        \begin{equation*}
+             X_{t} = X_{0} \; + \int_{0}^{t}(-\mu - X_{s}^{2})\,ds \; + \; \int_{0}^{t}\sigma dW_{s}\,.
+        \end{equation*}
 
-                \column{0.5\textwidth}
+        \uncover<2->{
+                Assuming we start the process at fixed $X_{0} = \sqrt{-\mu} + \delta$ ($\delta << 1$), a solution in a neighbour of $X_{t}=\sqrt{-\mu}$ is well approximated by the solution of the linear Ornstein-Uhlenbeck process (OUP)
+        
+                \begin{equation*}
+                        X_{t} = \theta \int_{0}^{t}(\sqrt{-\mu}-X_{s})\,ds \; + \; \sigma \int_{0}^{t}dW_{s}\,,
+                \end{equation*}
 
-                \vspace{-0.25cm}
-                \uncover<2->{
-                        \begin{figure}[H]
-                                \centering 
-                                \includegraphics[keepaspectratio, width=\textwidth]{./figures/slide_03.png}
-                        \end{figure}
-                }
+                which admits a stationary probability density with $\theta = -2\sqrt{-\mu}$ and covariance
 
-                \hfill
-                
-                \column{0.5\textwidth}
+                \begin{equation*}
+                        \text{Cov}[X_{s},X_{t}] = \frac{\sigma^{2}}{2\theta}e^{-\theta (t-s)}\,,\quad s<t\,.
+                \end{equation*}
+        }
 
-                \vspace{0.5cm}
-                \uncover<3->{
-                        The escape rate can be used as an EWS.
+        \uncover<3->{
+                If we now consider instantaneous time increments (i.e. $t\to s$) then
 
-                        \bigskip
-
-                        Can we estimate it from \textbf{timeseries data alone}?
-                }
-
-                \vspace{0.5cm}
-                \uncover<4->{
-                        \textbf{Algorithm}:
-                        \begin{enumerate}
-                             \item detrend the timeseries;
-                             \item assemble its histogram;
-                             \item fit an optimal density;
-                             \item reconstruct the potential;
-                             \item compute $\tau_{\text{esc}}$.
-                        \end{enumerate}
-                }
-
-        \end{columns}
+                \begin{equation*}
+                        \text{Cov}[X_{s},X_{t}]\to \text{Var}[X_{t}] = \frac{\sigma^{2}}{2\theta}\to 
+                        \begin{cases}
+                                0\,, \quad\mu\to\-\infty\,,\\
+                                \infty\,, \quad\mu\to 0\,.
+                        \end{cases}
+                \end{equation*}
+        }
 \end{frame}
 
 \end{document}
