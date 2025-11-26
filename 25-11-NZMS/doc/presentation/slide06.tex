@@ -9,6 +9,60 @@
         % Body
         \footnotesize
 
+        \uncover<1-2>{
+                \begin{definition}[Large deviation principle]\label{def:ldp}
+                        Given a random variable $X_{t}$ evolving according to $dX_{t} = f(X_{t})dt + \sqrt{\varepsilon}dW_{t}$, initial condition $X_{0}$ and total time $T>0$, the probability of the sample path $X^{\varepsilon}=\{X_{t}\}_{t=0}^{T}$ being located in a cylinder of radius $\delta>0$ around a path $\phi(X_{0}, t)$ satisfies a LDP if
+                        \begin{equation*}
+                                P[\phi]\asymp e^{-\frac{S[\phi]}{\varepsilon}} \quad\Bigg(\text{or}\quad\lim_{\varepsilon\to0}\log P\bigg(\sup_{t\in[0,T]}|X_{t}-\phi(X_{0},t)|<\delta\bigg) = -S[\phi]\Bigg)\,,
+                        \end{equation*}
+                        where $S$ is non-negative and it has a global minimum at $0$. 
+                \end{definition}
+        }
+
+        \uncover<2>{
+                \begin{theorem}[Freidlin-Wentzell]\label{thm:freidlin_wentzell}
+                     The sample paths of $dX_{t} = f(X_{t})dt + \sqrt{\varepsilon}dW_{t}$ satisfy a LDP with rate functional
+                     \begin{equation*}
+                             S[\phi] = \int_{0}^{T}L(\dot{\phi},\phi,t)dt = \frac{1}{2}\int_{0}^{T}\Big(\dot{\phi}-f(\phi)\Big)^{2}dt\,,
+                     \end{equation*}
+                     where $\phi$ is any (absolutely continuous) deterministic trajectory.
+                \end{theorem}
+        }
+
+        \vspace{-7.5cm}
+
+        \uncover<3-4>{
+                The most likely path $\phi(X_{0},t)\in H^{1}(\mathbb{R}^{d},[0,T])$ is the minimiser of $S[\phi]$ and satifies the Euler-Lagrange equations (ELEs)
+                \begin{equation*}
+                        \frac{d}{dt}\bigg(\frac{\partial}{\partial\dot{\phi}}\,L(\dot{\phi},\phi,t)\bigg) - \frac{\partial}{\partial\phi}\,L(\dot{\phi},\phi,t) = 0\,.
+                \end{equation*}
+                
+        }
+
+        \uncover<4>{
+                \begin{example}[OUP]\label{ex:oup}
+                        Consider $dX_{t} = -X_{t}dt + \sqrt{\varepsilon}dW_{t}$ with initial $X_{0}=0$ and termination $X_{T}=Y$ conditions.
+                        Given two paths
+                        \begin{equation*}
+                                \malr{\phi^{(1)}}(0,t) = Y\,\frac{t}{T}\,,\quad\malb{\phi^{(2)}}(0,t) = Y\frac{\sinh(t)}{\sinh(T)}\,,
+                        \end{equation*}
+                        with $\phi^{(1)}$ being an arbitrary linear (in time) trajectory connecting $0$ to $Y$ and $\phi^{(2)}$ solving the ELEs, their rate functionals are
+                        \begin{equation*}
+                                \malr{S^{(1)}}:=S[\malr{\phi^{(1)}}] = \frac{Y^{2}}{2T}\bigg(1 + T + \frac{T^{2}}{3}\bigg)\,,\quad \malb{S^{(2)}}:=S[\malb{\phi^{(2)}}] = \frac{Y^{2}}{4\sinh^{2}T}(e^{2T}-1)\,.
+                        \end{equation*}
+                \end{example}
+        }
+
+        \vspace{-7cm}
+
+        \uncover<5>{
+                \begin{figure}[H]
+                    \centering 
+                    \includegraphics[keepaspectratio, width=0.9\textwidth]{./figures/slide_06.png}
+                \end{figure}
+                
+        }
+      
 \end{frame}
 
 \end{document}

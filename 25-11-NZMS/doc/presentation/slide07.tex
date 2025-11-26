@@ -9,15 +9,21 @@
         % Body
         \footnotesize
 
-        Consider a vector field $f(x;\mu)$ with equilibria $x_{\text{stb,uns}}$. 
+        \begin{corollary}
+                     Consider a $1-$dimensional, conservative vector field $f$ (i.e. $\exists V$ s.t. $f = -\nabla V$) with a unique, stable fixed point $x_{0}$. Then the LDP for hitting the target $x$ scales like $\text{exp}(V(x_{0})-V(x))$.
+        \end{corollary}
 
-        \vspace{2mm}
+        \uncover<2->{
+                Consider a vector field $f(x;\mu)$ with equilibria $x_{\text{stb,uns}}$. 
 
-        If the vector field is conservative then its potential $V(x;\mu)$ has a local minima at $a\equiv x_{\text{stb}}$ and a local maxima at $b\equiv x_{\text{uns}}$.
+                \vspace{2mm}
+
+                If the vector field is conservative then its potential $V(x;\mu)$ has a local minima at $a\equiv x_{\text{stb}}$ and a local maxima at $b\equiv x_{\text{uns}}$.
+        }
 
         \vspace{4mm}
 
-        \uncover<2->{
+        \uncover<3->{
                 Approaching a saddle-node bifurcation ($\mu\to\mu_{\text{bif}}$) we have $|x_{\text{stb}} - x_{\text{uns}}|=|a-b|\to0$, meaning that 
 
                 \begin{equation*}
@@ -25,17 +31,10 @@
                 \end{equation*}
         }
 
-        \uncover<3->{
-                Furthermore notice that 
-                \begin{equation*}
-                        \lambda_{\text{stb,uns}}=\newprime{f}(x_{\text{stb,uns}})=\pprime{V}(x=\{a,b\})\to0\,,\quad\mu\to\mu_{\text{bif}}\,.
-                \end{equation*}
-        }
-
         \uncover<4->{
-                \alg{We can use the escape rate as an EWS!}
+                \alg{We can use the LDP as an EWS!}
                 \begin{equation*}
-                        \malg{r_{a\to b} = 
+                        \malg{\text{\textbf{exp}}(-\Delta V) = 
                                 \begin{cases}
                                         0\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to\infty\,,\\
                                         1\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to0\,. 

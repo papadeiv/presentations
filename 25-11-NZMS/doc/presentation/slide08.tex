@@ -14,19 +14,19 @@
         \vspace{2mm}
 
         \uncover<2->{
-                The stochastic evolution of an observable $x\in \mathbb{R}$ under $f$ is in analogy with the motion of an overdamped particle in a potential $V$ subject to noisy diffusion (Langevin equation)
+                The stochastic evolution of an observable $X_{t}:\Omega\to \mathbb{R}$ under $f$ is in analogy with the motion of an overdamped particle in a potential $V$ subject to noisy diffusion (Langevin equation)
 
                 \begin{equation*}
-                        dx_{t} = -\newprime{V}(x_{t};\mu)dt + \sigma dW_{t}\,.
+                        dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}\,.
                 \end{equation*}
         }
 
         \vspace{1mm}
 
         \uncover<3->{
-                Given $x_{0}\in \mathbb{R}$ the transition probability $p(x,t|x_{0},0)$ is described, over the state space, by the solution of the Fokker-Plank (or forward Kolmogoroff) equation
+                Given $X_{0}\in \mathbb{R}$ the transition probability $p(X_{t},t|X_{0},0)$ is described, over the state space, by the solution of the Fokker-Plank (or forward Kolmogoroff) equation
                 \begin{equation*}
-                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,,\quad D = \frac{\sigma^{2}}{2}\,. 
+                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,. 
                 \end{equation*}
         }
 

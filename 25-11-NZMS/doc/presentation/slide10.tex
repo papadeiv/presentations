@@ -15,7 +15,7 @@
                 \BlankLine
 
                 define $V_{*}(x,\boldsymbol{c}) = \boldsymbol{c[1]}x + \boldsymbol{c[2]}x^{2} + \boldsymbol{c[3]}x^{3}$\;
-                define $\rho(x,\boldsymbol{c})=\exp(-V(x,\boldsymbol{c}))$\;
+                define $\rho\,(x,\boldsymbol{c})=\exp(-V(x,\boldsymbol{c}))$\;
 
                 \BlankLine
                 \BlankLine
@@ -26,10 +26,10 @@
                 \BlankLine
 
                 \While{$\text{error}>\text{threshold}$}{
-                        guess = solve\_lls($p(x)$, histogram) + rand(3)\;
-                        $p(x) = \text{normalise}(\rho(x,\text{guess}))$\;
+                        guess = solve\_lls(histogram) + rand(3)\;
+                        $p(x) = \text{normalise}(\rho\,(x,\text{guess}))$\;
                         solution = solve\_nlls($p(x)$, histogram, guess)\;
-                        error = $\int_{}^{}(\rho(x,\text{solution}) - \text{histogram})^{2}dx$
+                        error = $\int_{}^{}(\rho\,(x,\text{solution}) - \text{histogram})^{2}dx$
                 }
 
                 \BlankLine
