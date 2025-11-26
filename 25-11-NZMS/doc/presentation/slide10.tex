@@ -1,48 +1,42 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 10
-\begin{frame}[t, label=slide10]
+% Slide # 12
+\begin{frame}[t, label=slide12]
         % Title
-        \frametitle{A numerical method to predict tipping}
+        \frametitle{Does it work?}
 
         % Body
         \footnotesize
 
-        \begin{algorithm}[H]
-                \KwIn{timeseries $x_{t}$ over $\Delta t > 0$, threshold $>0$}
+        \vspace{1.5cm}
 
-                \BlankLine
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
 
-                define $V_{*}(x,\boldsymbol{c}) = \boldsymbol{c[1]}x + \boldsymbol{c[2]}x^{2} + \boldsymbol{c[3]}x^{3}$\;
-                define $\rho\,(x,\boldsymbol{c})=\exp(-V(x,\boldsymbol{c}))$\;
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<1-2>[keepaspectratio, width=0.8\textwidth]{./figures/slide_10_2.jpg}%
+                \end{figure}
 
-                \BlankLine
-                \BlankLine
+                \hfill
 
-                residuals = detrend($x_{t}$, $\Delta t$)\;
-                histogram = fit(residuals)\;
+                \column{0.5\textwidth}
 
-                \BlankLine
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2>[keepaspectratio, width=0.8\textwidth]{./figures/slide_10_3.jpg}%
+                \end{figure}
 
-                \While{$\text{error}>\text{threshold}$}{
-                        guess = solve\_lls(histogram) + rand(3)\;
-                        $p(x) = \text{normalise}(\rho\,(x,\text{guess}))$\;
-                        solution = solve\_nlls($p(x)$, histogram, guess)\;
-                        error = $\int_{}^{}(\rho\,(x,\text{solution}) - \text{histogram})^{2}dx$
-                }
+       \end{columns}
 
-                \BlankLine
+       \vspace{-2.5cm}
 
-                a, b = compute\_extrema($V_{*}(x, \text{guess})$)\;
-                \alr{ews}= $\frac{1}{2\pi}\sqrt{|\pprime{V_{*}}(b, \text{guess})|\pprime{V_{*}}(a, \text{guess})}\exp(-(V_{*}(b, \text{guess})-V_{*}(a, \text{guess})))$\;
-
-                \BlankLine
-                \BlankLine
-
-                \KwOut{escape rate\alr{ews}from the minima $a$ of $V_{*}$}
-        \end{algorithm}
-
+       \begin{figure}[H]
+                \centering 
+                \includegraphics<3->[keepaspectratio, width=\textwidth]{./figures/slide_10_1.png}%
+       \end{figure}
 
 \end{frame}
 

@@ -1,72 +1,18 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 14
-\begin{frame}[t, label=slide14]
+% Slide # 15
+\begin{frame}[t, label=slide15]
         % Title
-        \frametitle{Symmetrically weighted least-squares}
+        \frametitle{First attempts at stabilizing the method}
 
         % Body
         \footnotesize
 
-        \begin{columns}[T]
-                
-                \column{0.5\textwidth}
-
-                Minimising the \textit{Integrated Mean Square Error} (IMSE) between $\hat{p}(x)$ and $p(x)$
-                
-                \vspace{-0.35cm}
-
-                \begin{equation*}
-                        \int_{}^{}\mathbb{E}^{2}[p-\hat{p}]dx \approx \frac{1}{N\cdot h} + \frac{h^{2}}{12}\int_{}^{}\big(\newprime{p}\big)^{2}dx\,, 
-                \end{equation*}
-
-                w.r.t. the bin width $h$ yields the optimal number of (uniformly distributed) bins
-
-                \vspace{-0.35cm}
-
-                \begin{equation*}
-                        n_{*} = \bigg\lceil \text{range}(X_{t})/\sigma_{s}\sqrt{24\sqrt{\pi}}N^{-\frac{1}{3}} \bigg\rceil \,, 
-                \end{equation*}
-                
-                where $N$ is the number of samples and $\sigma_{s}$ is the (sample) standard deviation.
-
-                \uncover<2->{
-                        We then transform the minimisation problem into a weighted one
-
-                        \vspace{-0.35cm}
-
-                        \begin{equation*}
-                                \boldsymbol{c}^{*} = \text{argmin}_{\boldsymbol{c}\in \mathbb{R}^{3}}\bigg\{\sum_{j=1}^{n_{*}}w_{j}(p(x_{j}, \boldsymbol{c}) - y_{j})^{2}\bigg\}\,, 
-                        \end{equation*}
-
-                        where $w_{j}=\alpha + \beta(x_{j} - x_{\text{median}})^{d}$, $d$ is even.
-                }
-
-                \hfill
-
-                \column{0.5\textwidth}
-
-                \vspace{-0.5cm}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<1-2>[keepaspectratio, width=\textwidth]{./figures/slide_14_1.png}%
-                \end{figure}
-
-                \vspace{-0.5cm}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<1-2>[keepaspectratio, width=\textwidth]{./figures/slide_14_2.png}%
-                \end{figure}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<3>[keepaspectratio, width=\textwidth]{./figures/slide_14_3.png}%
-                \end{figure}
-
-       \end{columns}
+        \begin{figure}[H]
+            \centering 
+            \includegraphics[keepaspectratio, width=\textwidth]{./figures/slide_14.png}
+        \end{figure}
 
 \end{frame}
 

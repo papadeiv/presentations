@@ -1,82 +1,68 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 5
-\begin{frame}[t, label=slide05]
+% Slide # 6
+\begin{frame}[t, label=slide06]
         % Title
-        \frametitle{Critical slowing down (CSD)}
+        \frametitle{Large deviation theory}
 
         % Body
         \footnotesize
 
-        Consider the deterministic limit of the noisy saddle-node normal form in $2-$D
+        \uncover<1-2>{
+                \begin{definition}[Large deviation principle]\label{def:ldp}
+                        Given a random variable $X_{t}$ evolving according to $dX_{t} = f(X_{t})dt + \sqrt{\varepsilon}dW_{t}$, initial condition $X_{0}$ and total time $T>0$, the probability of the sample path $X^{\varepsilon}=\{X_{t}\}_{t=0}^{T}$ being located in a cylinder of radius $\delta>0$ around a path $\phi(X_{0}, t)$ satisfies a LDP if
+                        \begin{equation*}
+                                P[\phi]\asymp e^{-\frac{S[\phi]}{\varepsilon}} \quad\Bigg(\text{or}\quad\lim_{\varepsilon\to0}\log P\bigg(\sup_{t\in[0,T]}|X_{t}-\phi(X_{0},t)|<\delta\bigg) = -S[\phi]\Bigg)\,,
+                        \end{equation*}
+                        where $S$ is non-negative and it has a global minimum at $0$. 
+                \end{definition}
+        }
 
-        \begin{equation*}
-                \begin{cases}
-                        \dot{x} = -\mu - x^{2}\,, \\
-                        \dot{y} = - \alpha y\,,
-                \end{cases}
-        \end{equation*}
+        \uncover<2>{
+                \begin{theorem}[Freidlin-Wentzell]\label{thm:freidlin_wentzell}
+                     The sample paths of $dX_{t} = f(X_{t})dt + \sqrt{\varepsilon}dW_{t}$ satisfy a LDP with rate functional
+                     \begin{equation*}
+                             S[\phi] = \int_{0}^{T}L(\dot{\phi},\phi,t)dt = \frac{1}{2}\int_{0}^{T}\Big(\dot{\phi}-f(\phi)\Big)^{2}dt\,,
+                     \end{equation*}
+                     where $\phi$ is any (absolutely continuous) deterministic trajectory.
+                \end{theorem}
+        }
 
-        with a \textbf{stable node} $\boldsymbol{x}_{\mu}^{(1)} = [\sqrt{-\mu},0]^{T}$ and a \textbf{saddle} $\boldsymbol{x}_{\mu}^{(2)} = [-\sqrt{-\mu},0]^{T}$ equilibria.
- 
-        \uncover<2->{
-                Then (per Hartman-Grobman) the flow close to $\boldsymbol{x}_{\mu}^{(1)}$ is well approximated by
+        \vspace{-7.5cm}
 
+        \uncover<3-4>{
+                The most likely path $\phi(X_{0},t)\in H^{1}(\mathbb{R}^{d},[0,T])$ is the minimiser of $S[\phi]$ and satifies the Euler-Lagrange equations (ELEs)
                 \begin{equation*}
-                \boldsymbol{x}(t) = \begin{bmatrix}
-                     x(t) \\
-                     y(t)
-                \end{bmatrix} =  
-                \begin{bmatrix}
-                     x_{0} \\
-                     y_{0}
-                \end{bmatrix} +  
-                c_{1}^{(1)}e^{-2\sqrt{-\mu}t}\begin{bmatrix}
-                     1 \\
-                     0
-                \end{bmatrix} + 
-                c_{2}^{(1)}e^{-\alpha{t}}\begin{bmatrix}
-                     0 \\
-                     1
-                \end{bmatrix}\,.
+                        \frac{d}{dt}\bigg(\frac{\partial}{\partial\dot{\phi}}\,L(\dot{\phi},\phi,t)\bigg) - \frac{\partial}{\partial\phi}\,L(\dot{\phi},\phi,t) = 0\,.
                 \end{equation*}
-        }
-
-        \uncover<3->{
-                Let's pick $\alpha = 2\sqrt{-\mu}$ and inject additive white noise with standard deviation $\sigma>0$.
-        } 
-
-        \uncover<4->{
-                Consider a circular region $\mathcal{B}_{\rho}(\boldsymbol{x}_{\mu}^{(1)})\subset \mathbb{R}^{2}$. How much time until my particles \textit{hit} $\mathcal{B}$?
-        }
-
-        \begin{columns}[T]
                 
-                \column{0.5\textwidth}
+        }
 
-                        \vspace{-1.5mm}
+        \uncover<4>{
+                \begin{example}[OUP]\label{ex:oup}
+                        Consider $dX_{t} = -X_{t}dt + \sqrt{\varepsilon}dW_{t}$ with initial $X_{0}=0$ and termination $X_{T}=Y$ conditions.
+                        Given two paths
+                        \begin{equation*}
+                                \malr{\phi^{(1)}}(0,t) = Y\,\frac{t}{T}\,,\quad\malb{\phi^{(2)}}(0,t) = Y\frac{\sinh(t)}{\sinh(T)}\,,
+                        \end{equation*}
+                        with $\phi^{(1)}$ being an arbitrary linear (in time) trajectory connecting $0$ to $Y$ and $\phi^{(2)}$ solving the ELEs, their rate functionals are
+                        \begin{equation*}
+                                \malr{S^{(1)}}:=S[\malr{\phi^{(1)}}] = \frac{Y^{2}}{2T}\bigg(1 + T + \frac{T^{2}}{3}\bigg)\,,\quad \malb{S^{(2)}}:=S[\malb{\phi^{(2)}}] = \frac{Y^{2}}{4\sinh^{2}T}(e^{2T}-1)\,.
+                        \end{equation*}
+                \end{example}
+        }
 
-                        \begin{figure}[H]
-                                \centering 
-                                \includegraphics<3>[keepaspectratio, width=0.525\textwidth]{./figures/slide_05_1.png}%
-                                \includegraphics<4->[keepaspectratio, width=0.525\textwidth]{./figures/slide_05_2.png}%
-                        \end{figure}
+        \vspace{-7cm}
 
-                \hfill
-
-                \column{0.5\textwidth}
-
-                        \vspace{-3mm}
-
-                        \begin{figure}[H]
-                                \centering 
-                                \includegraphics<5>[keepaspectratio, width=0.55\textwidth]{./figures/slide_05_3.png}%
-                                \includegraphics<6>[keepaspectratio, width=0.55\textwidth]{./figures/slide_05_4.png}%
-                        \end{figure}
-
-       \end{columns}
-
+        \uncover<5>{
+                \begin{figure}[H]
+                    \centering 
+                    \includegraphics[keepaspectratio, width=0.9\textwidth]{./figures/slide_05.png}
+                \end{figure}
+                
+        }
+      
 \end{frame}
 
 \end{document}

@@ -1,47 +1,47 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 8 
-\begin{frame}[t, label=slide08]
+% Slide # 10
+\begin{frame}[t, label=slide10]
         % Title
-        \frametitle{Transition probabilities}
+        \frametitle{A numerical method to predict tipping}
 
         % Body
         \footnotesize
 
-        Consider a conservative system $f(x;\mu) = -\nabla V(x;\mu)$ where $V$ is a scalar potential of the state's variables.
+        \begin{algorithm}[H]
+                \KwIn{timeseries $x_{t}$ over $\Delta t > 0$, threshold $>0$}
 
-        \vspace{2mm}
+                \BlankLine
 
-        \uncover<2->{
-                The stochastic evolution of an observable $X_{t}:\Omega\to \mathbb{R}$ under $f$ is in analogy with the motion of an overdamped particle in a potential $V$ subject to noisy diffusion (Langevin equation)
+                define $V(x,\boldsymbol{c}) = \boldsymbol{c[1]}x + \boldsymbol{c[2]}x^{2} + \boldsymbol{c[3]}x^{3}$\;
+                define $\rho\,(x,\boldsymbol{c})=\exp(-V(x,\boldsymbol{c}))$\;
 
-                \begin{equation*}
-                        dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}\,.
-                \end{equation*}
-        }
+                \BlankLine
+                \BlankLine
 
-        \vspace{1mm}
+                residuals = detrend($x_{t}$, $\Delta t$)\;
+                histogram = fit(residuals)\;
 
-        \uncover<3->{
-                Given $X_{0}\in \mathbb{R}$ the transition probability $p(X_{t},t|X_{0},0)$ is described, over the state space, by the solution of the Fokker-Plank (or forward Kolmogoroff) equation
-                \begin{equation*}
-                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,. 
-                \end{equation*}
-        }
+                \BlankLine
 
-        \vspace{1mm}
+                \While{$\text{error}>\text{threshold}$}{
+                        guess = solve\_lls(histogram) + rand(3)\;
+                        $p(x) = \text{normalise}(\rho\,(x,\text{guess}))$\;
+                        solution = solve\_nlls($p(x)$, histogram, guess)\;
+                        error = $\int_{}^{}(\rho\,(x,\text{solution}) - \text{histogram})^{2}dx$
+                }
 
-        \uncover<4->{
-                Let $\mu\in \mathbb{R}$ be fixed over $\Delta t >> 0$; if $\frac{\Delta p}{\Delta t}\approx 0$ (i.e. I ignore the transient regime) then my particle's transition probability solves the second-order IVP
+                \BlankLine
 
-                \begin{equation*}
-                   \begin{cases}
-                       D \pprime{p} + \pprime{V}p + \newprime{V}\newprime{p} = 0\,, \\
-                       \newprime{p}(\pm\infty) = 0\,.
-                   \end{cases}
-                \end{equation*}
-        }
+                a, b = compute\_extrema($V(x, \text{guess})$)\;
+                \alr{ews}= $\exp(-(V(b, \text{guess})-V(a, \text{guess})))$\;
+
+                \BlankLine
+                \BlankLine
+
+                \KwOut{approximate\alr{ews}from the the reconstruction of $V$}
+        \end{algorithm}
 
 \end{frame}
 

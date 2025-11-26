@@ -1,47 +1,27 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 9
-\begin{frame}[t, label=slide9]
+% Slide # 11
+\begin{frame}[t, label=slide11]
         % Title
-        \frametitle{Stationary equilibrium distribution}
+        \frametitle{Nonlinear least-squares regression}
 
         % Body
         \footnotesize
 
-        I can reduce the $1-$D (state variable $p$) second-order ODE to a $2-$D (state variables $p$ and $\newprime{p}$) first-order system of ODEs. 
+        To characterise the statistical properties of the method let's consider an ensemble of $N>>1$ i.i.d. overdamped particles in a cubic potential 
 
-        \vspace{3mm}
+        \begin{figure}[H]
+                \centering 
+                \includegraphics<2->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_1.png}%
+        \end{figure}
 
-        I can then solve for $p(x)$ using an integration factor and integration-by-parts to get a\alr{stationary equilibrium density}$p(x) = N\,e^{-\frac{V(x)}{D}}$.
+        \vspace{-3mm}
 
-        \vspace{3mm}
-
-        \uncover<2->{
-                Consider a cubic saddle-node system $f(x;\mu) = -\mu(t) - 2x + 3x^{2} - 0.8x^{3}$ at $\mu\in \mathbb{R}$ s.t. the quartic potential has $2$, well separated local minima and a local maxima.
-        }
-
-        \begin{columns}[T]
-                
-                \column{0.32\textwidth}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_09_1.png}%
-                        \includegraphics<3-4>[keepaspectratio, width=\textwidth]{./figures/slide_09_2.png}%
-                        \includegraphics<5->[keepaspectratio, width=\textwidth]{./figures/slide_09_4.png}%
-                \end{figure}
-
-                \hfill
-
-                \column{0.68\textwidth}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<4->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_3.png}%
-                \end{figure}
-
-       \end{columns}
+        \begin{figure}[H]
+                \centering 
+                \includegraphics<3->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_2.png}%
+        \end{figure}
 
 \end{frame}
 

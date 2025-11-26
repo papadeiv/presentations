@@ -7,8 +7,17 @@ Collection of all the functions used to generate and properly format the figures
 # Create empty layouts for the figures
 include("./figs.jl")
 
+# Plot the timeseries
+function plot(time, state, termination)
+        # Check if the timeseries has hit the target at the termination time
+        if abs(state[end] - termination) < 0.01 
+                # Plot the timeseries
+                lines!(ax1, time, state, color = (:black, 0.15), linewidth = 1.0)
+        end
+end
+
 # Plot the LDP of two paths 
-function plot(termination, total_time)
+function plot(termination::Float64, total_time::Float64)
         # Rename variables
         Y = termination
         T = total_time
