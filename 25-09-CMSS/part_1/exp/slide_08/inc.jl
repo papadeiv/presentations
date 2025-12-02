@@ -1,14 +1,23 @@
-using CairoMakie, Makie.Colors
-using LaTeXStrings
+using CairoMakie, Makie.Colors, LaTeXStrings
+using PyCall, Statistics
 
-# Avoid re-loading PlottingTools 
-if !isdefined(Main, :PlottingTools)
-        include("../../src/PlottingTools.jl")
-        using .PlottingTools
+# Avoid re-loading modules 
+if !isdefined(Main, :DataInterface)
+        include("../../src/DataInterface.jl")
+        using .DataInterface
 end
 
-# Avoid re-loading SystemAnalysis 
 if !isdefined(Main, :SystemAnalysis)
         include("../../src/SystemAnalysis.jl")
         using .SystemAnalysis
+end
+
+if !isdefined(Main, :StatisticalMethods)
+        include("../../src/StatisticalMethods.jl")
+        using .StatisticalMethods
+end
+
+if !isdefined(Main, :PlottingTools)
+        include("../../src/PlottingTools.jl")
+        using .PlottingTools
 end

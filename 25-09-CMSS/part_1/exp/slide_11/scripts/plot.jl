@@ -1,7 +1,7 @@
 """
     Plotting script
 
-Collection of all the functions used to generate the plots of the simulations.
+Functions used to create the plots in each figure.
 """
 
 # Plot the non-autonomous solution and the parameter shift

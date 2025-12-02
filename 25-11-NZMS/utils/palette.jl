@@ -17,6 +17,4 @@ CtpWhite = colorant"rgb(198,208,245)"
 CtpGray = colorant"rgb(98,104,128)"
 
 # Export the palette
-for name in names(@__MODULE__; all = true)
-        @eval export $name
-end
+@exportAll()

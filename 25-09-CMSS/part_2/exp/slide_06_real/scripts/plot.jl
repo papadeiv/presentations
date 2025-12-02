@@ -1,8 +1,3 @@
-"""
-    Plotting script
-
-Collection of all the functions used to generate the plots of the simulations.
-"""
 
 # Create empty layouts for the figures
 include("./figs.jl")

@@ -1,10 +1,8 @@
 """
     Plotting script
 
-Collection of all the functions used to generate and properly format the figures of the simulations.
+Functions used to create the plots in each figure.
 """
-
-using PyCall
 
 # Create empty layouts for the figures
 include("./figs.jl")
@@ -40,24 +38,14 @@ function plot(timesteps, timeseries, ews, tipping_point)
         May = evolve_may(1e-2, 3.52)
         lines!(ax3, May.time, May.state[1], color = CtpRed, linewidth = 3.0)
 
-        # Plot deMonecal's data on the end of teh African humid period
-        fullpath = "../../res/data/slide_02/deMonecal00.csv" 
-        df = DataFrame(CSV.File(fullpath; delim=',', header=false))
-        data = Matrix{Float64}(undef, nrow(df), ncol(df))
-        for n in 1:ncol(df)
-                data[:,n] = df[:,n]
-        end
+        # Plot deMonecal's data on the end of the African humid period
+        data = readin("slide_02/deMonecal00.csv")
         t = data[:,1].*1e-3
         u = data[:,2]
         lines!(ax4, t, u, color = CtpRed, linewidth = 3.0)
 
         # Plot Diks data on the 2008 financial crisis
-        fullpath = "../../res/data/slide_02/Diks18.csv"
-        df = DataFrame(CSV.File(fullpath; delim=',', header=false))
-        data = Matrix{Float64}(undef, nrow(df), ncol(df))
-        for n in 1:ncol(df)
-                data[:,n] = df[:,n]
-        end
+        data = readin("slide_02/Diks18.csv")
         u = data[150:end].*1e-3
         t = LinRange(1,length(u),length(u))
         lines!(ax5, t, u, color = CtpRed, linewidth = 3.0)

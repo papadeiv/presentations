@@ -1,14 +1,13 @@
 """
     Figures layout
 
-Generation of the layouts for the figures of the simulations.
+Generation of the layouts and formats of the figures.
 """
 
 #----------------#
 #    Figure 1    #
 #----------------#
 
-# Figure for the timeseries 
 fig1, ax1 = makefig(size = [1600,1200],
                     pad = (20,40,20,20), # Order is: left, right, bottom, top 
                     bg_out = :white,

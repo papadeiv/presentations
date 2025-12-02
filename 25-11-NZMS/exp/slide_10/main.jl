@@ -1,8 +1,7 @@
 """
-    Statistical properties of the escape rate EWS in a stationary, coarse parameter sweep in a quadratic saddle-node.
+    Main script
 
-Characterise the variance of the escape rate early-warning signal computed from the potential reconstruction by running multiple, stationary ensemble simulations at differe fixed parameter values.
-As the bifurcation parameter approaches its critical value the authentic early-warning (the one computed analytically from the ground truth potential U(x)) increases and the reconstructions becomes better which is signalled by an ensemble mean closer to the real value and an ensemble variance drastically decreasing.
+Run this file to execute the simulation, analyse and plot the results.
 """
 
 # Import the necessary packages and local modules

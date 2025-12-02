@@ -1,7 +1,7 @@
 """
     Postprocessing script
 
-In here we define the quantities related to the computation of EWSs from raw data.
+Collection of quantities and functions used to postprocess and analyse the results of a simulation.
 """
 
 # Number of steps indicating the transient lapse of the critical transition

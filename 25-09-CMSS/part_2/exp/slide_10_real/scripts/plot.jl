@@ -1,7 +1,7 @@
 """
     Plotting script
 
-Collection of all the functions used to generate the plots of the simulations.
+Functions used to create the plots in each figure.
 """
 
 # Create empty layouts for the figures

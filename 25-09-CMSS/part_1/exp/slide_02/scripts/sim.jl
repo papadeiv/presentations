@@ -1,7 +1,7 @@
 """
     Simulation script
 
-This is where we store the definition of the system alongside all the settings of the problem.
+Storage of the definitions of the system alongside all the settings of the problem.
 """
 
 # Define the stationary parameters of the process

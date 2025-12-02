@@ -1,14 +1,13 @@
 """
     Figures layout
 
-Generation of the layouts for the figures of the simulations.
+Generation of the layouts and formats of the figures.
 """
 
 #----------------#
 #    Figure 1    #
 #----------------#
 
-# Figure for the linear reconstructed pdf 
 fig1, ax1 = makefig(size = [1600,1600],
                     pad = (20,40,20,20), # Order is: left, right, bottom, top 
                     bg_out = :white,
@@ -22,7 +21,6 @@ fig1, ax1 = makefig(size = [1600,1600],
                     ticks_lab_trunc = [1,0]
                    )
 
-# Figure for the nonlinear reconstructed pdf 
 fig2, ax2 = makefig(fig = fig1,
                     box_position = [1,2],
                     limits = ((-0.35, 0.35), (-0.5, 7)),
@@ -34,7 +32,6 @@ fig2, ax2 = makefig(fig = fig1,
                     ticks_lab_trunc = [1,0]
                    )
 
-# Figure for the linear potential reconstruction 
 fig3, ax3 = makefig(fig = fig1,
                     box_position = [2,1],
                     limits = ((-1.5, 1.5), (-1, 1)),
@@ -44,7 +41,6 @@ fig3, ax3 = makefig(fig = fig1,
                     ticks_lab_trunc = [1,0]
                    )
 
-# Figure for the nonlinear potential reconstruction 
 fig4, ax4 = makefig(fig = fig1,
                     box_position = [2,2],
                     limits = ((-1.5, 1.5), (-1, 1)),
@@ -64,7 +60,6 @@ colgap!(fig1.layout, 90)
 #    Figure 2    #
 #----------------#
 
-# Figure for the ensemble error 
 fig5, ax5 = makefig(size = [1600,1000],
                     pad = (20,40,20,20), # Order is: left, right, bottom, top 
                     bg_out = :white,
@@ -75,18 +70,3 @@ fig5, ax5 = makefig(size = [1600,1000],
                     #y_ticks = [0,0.25],
                     ticks_lab_trunc = [2,2]
                    )
-
-#=
-# Axis for the ensemble skewness 
-ax5_right = Axis(fig5[1,1],
-                 yaxisposition = :right,
-                 ylabel = L"\textbf{skewness}",
-                 ylabelsize = 50,
-                 yticksize = 22,
-                 ytickwidth = 5.0,
-                 yticklabelsize = 50,
-                 yticklabelcolor = :red,
-                )
-hidexdecorations!(ax5_right)
-hideydecorations!(ax5_right, label = false, ticks=false, ticklabels=false)
-=#

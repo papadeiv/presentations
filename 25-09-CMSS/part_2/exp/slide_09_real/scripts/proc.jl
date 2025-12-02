@@ -1,7 +1,7 @@
 """
     Postprocessing script
 
-In here we define the quantities related to the computation of EWSs from raw data.
+Collection of quantities and functions used to postprocess and analyse the results of a simulation.
 """
 
 # Parameters of the scalar potential method

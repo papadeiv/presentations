@@ -1,7 +1,7 @@
 """
-        ?
+    Main script
 
-???
+Run this file to execute the simulation, analyse and plot the results.
 """
 
 # Import the necessary packages and local modules
@@ -16,8 +16,6 @@ include("./scripts/plot.jl")
 function main()
         # Define the two runs
         runs = ["bad", "good"]
-        #bins_data = Matrix{Float64}(undef, Nb, 2)
-        #dist_data = Matrix{Float64}(undef, Nb, 2)
 
         # Loop over the two runs
         for n in 1:2

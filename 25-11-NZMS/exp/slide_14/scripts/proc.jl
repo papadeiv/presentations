@@ -1,11 +1,10 @@
 """
     Postprocessing script
 
-In here we define the quantities related to the computation of EWSs from raw data.
+Collection of quantities and functions used to postprocess and analyse the results of a simulation.
 """
 
 # Parameters of the scalar potential method
-#Nb = convert(Int64, floor(0.010*Nt))            # Number of bins in the histogram
 Nc = convert(Int64, 3e0)                        # Solution space dim. of the method 
 
 # Scalar and reconstructed potential 

@@ -1,7 +1,7 @@
 """
-   ? 
+    Main script
 
-???
+Run this file to execute the simulation, analyse and plot the results.
 """
 
 # Import the necessary packages and local modules

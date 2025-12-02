@@ -1,7 +1,7 @@
 """
     Postprocessing script
 
-In here we define the quantities related to the computation of EWSs from raw data.
+Collection of quantities and functions used to postprocess and analyse the results of a simulation.
 """
 
 # Size of the sliding window (as a fraction of the total length of the timeseries)

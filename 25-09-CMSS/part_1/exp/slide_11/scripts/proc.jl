@@ -1,7 +1,7 @@
 """
     Postprocessing script
 
-In here we define the quantities used for postprocessing the results.
+Collection of quantities and functions used to postprocess and analyse the results of a simulation.
 """
 
 # Data structures for storing the results
