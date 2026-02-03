@@ -1,0 +1,42 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 3
+\begin{frame}[t, label=slide03]
+        % Title
+        \frametitle{Dynamical systems that tip}
+
+        % Body
+        \footnotesize
+
+        Consider $n-$dimensional Itô processes with additive diffusion $\sigma = \sqrt{2D}>0$ and non-autonomous drift
+
+        \begin{equation*}
+           \begin{cases}
+                   dX_{t} = f(X_{t},\,\mu(t))dt + \sqrt{2D}dW_{t} \,, \\
+              \dot{\mu} \in \Lambda_{\varepsilon}(\mu_{-},\mu_{+}) \,. 
+           \end{cases}
+        \end{equation*}
+
+        \vspace{0.5cm}
+        \uncover<2->{
+                The law of evolution of the parameter is a\alr{parametrised family of shifts}in time connecting the past-limit (i.e. $\mu(t)\to\mu_{-}$, $t\to-\infty$) to the future-limit system (i.e. $\mu(t)\to\mu_{+}$, $t\to+\infty$).
+        }
+
+        \vspace{0.5cm}
+        \uncover<3->{
+                For any given $\mu$ an\alr{equilibrium}of the system is a state $X^{*}\in \mathbb{R}^{n}$ s.t. $f(X^{*},\mu) = 0$. 
+        }
+
+        \vspace{0.5cm}
+        \uncover<4->{
+                Since $\mu = \mu(t)$ then the equilbrium itself drifts in state space, i.e. $X^{*} = X_{t}^{*}$ is a\alr{quasi-steady equilibrium (QSE)}.
+        }
+
+        \vspace{0.5cm}
+        \uncover<5->{
+                If at any point $\mu(t)$ a QSE is created, destroyed or it changes its stability then a\alr{bifurcation}has occured.
+        }
+\end{frame}
+
+\end{document}

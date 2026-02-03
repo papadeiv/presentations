@@ -1,0 +1,47 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 8
+\begin{frame}[t, label=slide08]
+        % Title
+        \frametitle{Treating tipping points as rare events}
+
+        % Body
+        \footnotesize
+
+        \begin{corollary}
+                     Consider a $1-$dimensional, conservative vector field $f$ (i.e. $\exists V$ s.t. $f = -\nabla V$) with a unique, stable fixed point $x_{0}$. Then the probability for hitting a target $x$ scales as $\text{exp}(V(x_{0})-V(x))$.
+        \end{corollary}
+
+        \uncover<2->{
+                Consider a vector field $f(x;\mu)$ with equilibria $x_{\text{stb,uns}}$. 
+
+                \vspace{2mm}
+
+                If the vector field is conservative then its potential $V(x;\mu)$ has a local minima at $a\equiv x_{\text{stb}}$ and a local maxima at $b\equiv x_{\text{uns}}$.
+        }
+
+        \vspace{4mm}
+
+        \uncover<3->{
+                Approaching a saddle-node bifurcation ($\mu\to\mu_{\text{bif}}$) we have $|x_{\text{stb}} - x_{\text{uns}}|=|a-b|\to0$, meaning that 
+
+                \begin{equation*}
+                        V(b)-V(a)=:\Delta V\to 0\quad\Longrightarrow\quad\exp(-\Delta V)\to1.
+                \end{equation*}
+        }
+
+        \uncover<4->{
+                \alg{We can use the LDP as an EWS!}
+                \begin{equation*}
+                        \malg{\text{\textbf{exp}}(-\Delta V) = 
+                                \begin{cases}
+                                        0\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to\infty\,,\\
+                                        1\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to0\,. 
+                                \end{cases}}
+                \end{equation*}
+        }
+
+\end{frame}
+
+\end{document}

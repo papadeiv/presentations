@@ -23,3 +23,5 @@ The subdriectories are sorted in ascending chronological order and they are asso
 - July 2025: talk at the [biennial Global Tipping Points conference](./25-07-GTP/) (GTP) in Exeter, UK;
 - July 2025: short talk at the [summer school on Recent Trends in Probability and Statistics](./25-07-P@W/) (P@W) in Coventry, UK;
 - September 2025: two-parts seminar at the [Centre of Mathematical Social Sciences](./25-09-CMSS/) (CMSS) in Auckland, NZ.
+- November 2025: conference talk at the [NZMS](./25-11-NZMS/) Colloquium in Hamilton, NZ.
+- February 2026: conference talk at the [Australian and New Zealand Industrial and Applied Mathematics](./26-02-ANZIAM/) (ANZIAM) meeting in Canberra, Australia.

@@ -1,0 +1,36 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 7
+\begin{frame}[t, label=slide07]
+        % Title
+        \frametitle{Entering large deviation theory}
+
+        % Body
+        \footnotesize
+        
+        \begin{theorem}[Freidlin-Wentzell]\label{thm:freidlin_wentzell}
+                The probability of the sample paths $X^{D}=\{X_{t}\}_{t=0}^{T}$ of $dX_{t} = f(X_{t})dt + \sqrt{2D}dW_{t}$ to be located in a cylinder of radius $\delta>0$ around any (absolutely continuous) deterministic path $\phi$ decays as
+
+                \vspace{-0.4cm}
+                \begin{equation*}
+                        P[\phi]\asymp \exp\bigg(-\frac{S[\phi]}{2D}\bigg) \quad\Bigg(\text{or}\quad\lim_{D\to0}\log P\bigg(\sup_{t\in[0,T]}|X_{t}-\phi(X_{0},t)|<\delta\bigg) = -S[\phi]\Bigg)\,,
+                \end{equation*}
+
+                where the cost of following such path is given by the rate functional 
+
+                \begin{equation*}
+                        S[\phi] = \int_{0}^{T}L(\dot{\phi},\phi,t)dt = \frac{1}{2}\int_{0}^{T}\Big(\dot{\phi}-f(\phi)\Big)^{2}dt\,,
+                \end{equation*}
+        \end{theorem}
+
+        \vspace{0.5cm}
+        \uncover<2->{
+                In the singular limit $\varepsilon\to0$ the most likely path $\phi(X_{0},t)\in H^{1}(\mathbb{R}^{d},[0,T])$ is the minimiser of $S[\phi]$ and it satisfies the Euler-Lagrange equations (ELEs)
+                \begin{equation*}
+                        \frac{d}{dt}\bigg(\frac{\partial}{\partial\dot{\phi}}\,L(\dot{\phi},\phi,t)\bigg) - \frac{\partial}{\partial\phi}\,L(\dot{\phi},\phi,t) = 0\,.
+                \end{equation*}
+        }
+\end{frame}
+
+\end{document}

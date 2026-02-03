@@ -1,0 +1,49 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 4
+\begin{frame}[t, label=slide04]
+        % Title
+        \frametitle{Tipping mechanisms}
+
+        % Body
+        \footnotesize
+
+        We want to differentiate between bifurcation-induced (B-tipping) from rate-induced (R-tipping) critical transitions.
+
+        \vspace{0.5cm}
+
+        The former type (usually) happens when the parameter shift is too abrupt. 
+
+        \vspace{0.5cm}
+
+        Suppose $\Lambda_{\varepsilon}(\mu_{-},\mu_{+}) = \frac{\mu_{-}+\mu_{+}}{2} + \frac{\mu_{+} - \mu_{-}}{2}\tanh(\varepsilon(t-t_{0}))$:
+
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<2-3>[keepaspectratio, width=\textwidth]{./figures/slide_04_1.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<3>[keepaspectratio, width=\textwidth]{./figures/slide_04_2.png}%
+                \end{figure}
+
+        \end{columns}
+
+        \vspace{-1.25cm}
+        \begin{figure}[H]
+            \centering 
+            \includegraphics<4>[keepaspectratio, width=0.60\textwidth]{./figures/slide_04_3.png}
+        \end{figure}
+\end{frame}
+
+\end{document}

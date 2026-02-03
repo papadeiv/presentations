@@ -1,0 +1,41 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 10 
+\begin{frame}[t, label=slide10]
+        % Title
+        \frametitle{Functional framework}
+
+        % Body
+        \footnotesize
+        
+        An observed sample path can be thought of as a sequence $\{X_{n}\}_{n=1}^{N}\subset I \subseteq \mathbb{R}$ of $N>0$ i.i.d. random variables sampled from $p(x)\in H:=\{f\in L^{2}(\mathbb{R})\;:\;\int_{\mathbb{R}}^{}f(x)dx = 1\}$.
+
+        \vspace{0.25cm}
+        \uncover<2->{
+                Fixing $h>0$ identifies a unique partition $I_{h}$ of $I$ into $0 < M < N$ homogeneous (i.e. fixed width), disjoint subintervals
+                \begin{equation*}
+                        I_{h} = \cup_{k=1}^{M}B_{k}\,,\quad B_{k} = \big[\min\{X_{t}\} + (k-1)h, \min\{X_{t}\} + kh\big)\,.
+                \end{equation*}
+        }
+
+        \uncover<3->{
+                Construct the subspace of $H$ of piecewise constant functions
+                \begin{equation*}
+                        \mathcal{H}_{h}:=\bigg\{f\in H\;:\;f(x)=\sum_{k=1}^{M}c_{k}\boldsymbol{1}_{B_{k}}(x)\bigg\}\,.
+                \end{equation*}
+        }
+
+        \uncover<4->{
+                \begin{proposition}
+                     There exists a unique minimiser of
+                     \begin{equation*}
+                         p_{h}:=\text{argmin}_{f\in \mathcal{H}_{h}}||f - p||_{H}\,,
+                     \end{equation*}
+                     and it coincides with the bin-averaged true density, i.e. $c_{k}=\frac{1}{h}\int_{B_{k}}^{}p(x)dx=:p_{k}$.
+                \end{proposition}
+        }
+
+\end{frame}
+
+\end{document}

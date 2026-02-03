@@ -1,0 +1,58 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+% Slide # 9
+\begin{frame}[t, label=slide09]
+        % Title
+        \frametitle{Transition probabilities}
+
+        % Body
+        \footnotesize
+
+        \uncover<1-3>{
+                Given a $1-$dimensional conservative system $dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}$ the transition probability $p(X_{t},t|X_{0},0)$ is described, over the state space, by the solution of the Fokker-Plank (or forward Kolmogoroff) equation \begin{equation*}
+                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,. 
+                \end{equation*}
+        }
+
+        \uncover<2-3>{
+                Let $\mu\in \mathbb{R}$ be fixed over $\Delta t >> 0$; if $\frac{\Delta p}{\Delta t}\approx 0$ (i.e. I ignore the transient regime) then the transition probability solves the second-order IVP
+
+                \begin{equation*}
+                   \begin{cases}
+                       D \pprime{p} + \pprime{V}p + \newprime{V}\newprime{p} = 0\,, \\
+                       \newprime{p}(\pm\infty) = 0\,.
+                   \end{cases}
+                \end{equation*}
+        }
+
+        \uncover<3>{
+                I can then solve for $p(x)$ using an integration factor and integration-by-parts to get a\alr{stationary equilibrium density}$p(x) = Z\,\exp(-V(x)/D)$, with $Z>0$ being the normalisation constant of $\exp(-V(x)/D)$.
+        }
+
+        \vspace{-5cm}
+
+        \begin{columns}[T]
+                
+                \column{0.32\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<4>[keepaspectratio, width=\textwidth]{./figures/slide_09_1.png}%
+                        \includegraphics<5-6>[keepaspectratio, width=\textwidth]{./figures/slide_09_2.png}%
+                        \includegraphics<7->[keepaspectratio, width=\textwidth]{./figures/slide_09_4.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.68\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<6->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_3.png}%
+                \end{figure}
+
+       \end{columns}
+\end{frame}
+
+\end{document}
