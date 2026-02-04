@@ -9,14 +9,18 @@
         % Body
         \footnotesize
 
-        \uncover<1-3>{
-                Given a $1-$dimensional conservative system $dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}$ the transition probability $p(X_{t},t|X_{0},0)$ is described, over the state space, by the solution of the Fokker-Plank (or forward Kolmogoroff) equation \begin{equation*}
+        \uncover<1->{
+                Given a $1-$dimensional conservative system $dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}$ the transition probability $p(X_{t},t|X_{0},0)$ satifies the Fokker-Plank equation 
+
+                \begin{equation*}
                      \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,. 
                 \end{equation*}
         }
 
-        \uncover<2-3>{
-                Let $\mu\in \mathbb{R}$ be fixed over $\Delta t >> 0$; if $\frac{\Delta p}{\Delta t}\approx 0$ (i.e. I ignore the transient regime) then the transition probability solves the second-order IVP
+        \vspace{-0.25cm}
+
+        \uncover<2->{
+                In the singular limit $\varepsilon\to0$ the transition probability solves the second-order IVP
 
                 \begin{equation*}
                    \begin{cases}
@@ -24,13 +28,12 @@
                        \newprime{p}(\pm\infty) = 0\,.
                    \end{cases}
                 \end{equation*}
+
+                whose solution is a\alr{stationary equilibrium density}$p(x) = Z\,\exp(-V(x)/D)$, with $Z>0$ being the normalisation constant of $\exp(-V(x)/D)$.
         }
 
-        \uncover<3>{
-                I can then solve for $p(x)$ using an integration factor and integration-by-parts to get a\alr{stationary equilibrium density}$p(x) = Z\,\exp(-V(x)/D)$, with $Z>0$ being the normalisation constant of $\exp(-V(x)/D)$.
-        }
 
-        \vspace{-5cm}
+        \vspace{-0.25cm}
 
         \begin{columns}[T]
                 
@@ -38,9 +41,9 @@
 
                 \begin{figure}[H]
                         \centering 
-                        \includegraphics<4>[keepaspectratio, width=\textwidth]{./figures/slide_09_1.png}%
-                        \includegraphics<5-6>[keepaspectratio, width=\textwidth]{./figures/slide_09_2.png}%
-                        \includegraphics<7->[keepaspectratio, width=\textwidth]{./figures/slide_09_4.png}%
+                        \includegraphics<1>[keepaspectratio, width=\textwidth]{./figures/slide_09_1.png}%
+                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_09_2.png}%
+                        \includegraphics<3->[keepaspectratio, width=\textwidth]{./figures/slide_09_4.png}%
                 \end{figure}
 
                 \hfill
@@ -49,7 +52,7 @@
 
                 \begin{figure}[H]
                         \centering 
-                        \includegraphics<6->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_3.png}%
+                        \includegraphics<3->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_3.png}%
                 \end{figure}
 
        \end{columns}
