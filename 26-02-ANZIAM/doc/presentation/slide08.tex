@@ -4,44 +4,58 @@
 % Slide # 8
 \begin{frame}[t, label=slide08]
         % Title
-        \frametitle{Treating tipping points as rare events}
+        \frametitle{Transition probabilities}
 
         % Body
         \footnotesize
 
-        \begin{corollary}
-                     Consider a $1-$dimensional, conservative vector field $f$ (i.e. $\exists V$ s.t. $f = -\nabla V$) with a unique, stable fixed point $x_{0}$. Then the probability for hitting a target $x$ scales as $\text{exp}(V(x_{0})-V(x))$.
-        \end{corollary}
+        \uncover<1->{
+                Given a $1-$dimensional conservative system $dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}$ the transition probability $p(X_{t},t|X_{0},0)$ satifies the Fokker-Plank equation 
+
+                \begin{equation*}
+                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,. 
+                \end{equation*}
+        }
+
+        \vspace{-0.25cm}
 
         \uncover<2->{
-                Consider a vector field $f(x;\mu)$ with equilibria $x_{\text{stb,uns}}$. 
-
-                \vspace{2mm}
-
-                If the vector field is conservative then its potential $V(x;\mu)$ has a local minima at $a\equiv x_{\text{stb}}$ and a local maxima at $b\equiv x_{\text{uns}}$.
-        }
-
-        \vspace{4mm}
-
-        \uncover<3->{
-                Approaching a saddle-node bifurcation ($\mu\to\mu_{\text{bif}}$) we have $|x_{\text{stb}} - x_{\text{uns}}|=|a-b|\to0$, meaning that 
+                In the singular limit $\varepsilon\to0$ the transition probability solves the second-order IVP
 
                 \begin{equation*}
-                        V(b)-V(a)=:\Delta V\to 0\quad\Longrightarrow\quad\exp(-\Delta V)\to1.
+                   \begin{cases}
+                       D \pprime{p} + \pprime{V}p + \newprime{V}\newprime{p} = 0\,, \\
+                       \newprime{p}(\pm\infty) = 0\,.
+                   \end{cases}
                 \end{equation*}
+
+                whose solution is a\alr{stationary equilibrium density}$p(x) = Z\,\exp(-V(x)/D)$, with $Z>0$ being the normalisation constant of $\exp(-V(x)/D)$.
         }
 
-        \uncover<4->{
-                \alg{We can use the LDP as an EWS!}
-                \begin{equation*}
-                        \malg{\text{\textbf{exp}}(-\Delta V) = 
-                                \begin{cases}
-                                        0\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to\infty\,,\\
-                                        1\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to0\,. 
-                                \end{cases}}
-                \end{equation*}
-        }
 
+        \vspace{-0.25cm}
+
+        \begin{columns}[T]
+                
+                \column{0.32\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<1>[keepaspectratio, width=\textwidth]{./figures/slide_08_1.png}%
+                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_08_2.png}%
+                        \includegraphics<3->[keepaspectratio, width=\textwidth]{./figures/slide_08_4.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.68\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<3->[keepaspectratio, width=0.75\textwidth]{./figures/slide_08_3.png}%
+                \end{figure}
+
+       \end{columns}
 \end{frame}
 
 \end{document}

@@ -1,61 +1,49 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 9
+% Slide # 9 
 \begin{frame}[t, label=slide09]
         % Title
-        \frametitle{Transition probabilities}
+        \frametitle{Functional setting}
 
         % Body
         \footnotesize
+        
+        Let $I \subset \mathbb{R}$ and $p(x)\in H_{I}:=\big\{f\in L^{2}(I)\;:\;\int_{I}^{}f(x)dx = 1\big\}$.
 
-        \uncover<1->{
-                Given a $1-$dimensional conservative system $dX_{t} = -\newprime{V}(X_{t};\mu)dt + \sqrt{2D}dW_{t}$ the transition probability $p(X_{t},t|X_{0},0)$ satifies the Fokker-Plank equation 
-
-                \begin{equation*}
-                     \partial_{t}p = \mathcal{L}p := \newprime{(\newprime{V}p)} + D\pprime{p}\,. 
-                \end{equation*}
-        }
-
-        \vspace{-0.25cm}
-
+        \vspace{0.25cm}
         \uncover<2->{
-                In the singular limit $\varepsilon\to0$ the transition probability solves the second-order IVP
-
-                \begin{equation*}
-                   \begin{cases}
-                       D \pprime{p} + \pprime{V}p + \newprime{V}\newprime{p} = 0\,, \\
-                       \newprime{p}(\pm\infty) = 0\,.
-                   \end{cases}
-                \end{equation*}
-
-                whose solution is a\alr{stationary equilibrium density}$p(x) = Z\,\exp(-V(x)/D)$, with $Z>0$ being the normalisation constant of $\exp(-V(x)/D)$.
+                For any $h>0$ there is a partition $I_{h} = \cup_{k=1}^{M}B_{k}$ of $I$ into homogeneous bins $B_{k}$.
         }
 
+        \vspace{0.25cm}
+        \uncover<3->{
+                Construct the subspace $\mathcal{H}_{h}:=\big\{f\in H_{I}\;:\;f(x)=\sum_{k=1}^{M}c_{k}\boldsymbol{1}_{B_{k}}(x)\big\}$.
+        }
 
-        \vspace{-0.25cm}
+        \vspace{0.35cm}
+        \uncover<4->{
+                Let $\{X_{n}\}_{n=1}^{N}$ be a sequence of i.i.d. observations sampled from $p(x)$, then 
 
-        \begin{columns}[T]
-                
-                \column{0.32\textwidth}
+                \begin{equation*}
+                        \hat{p}_{h}(x) = \sum_{k=1}^{M}\hat{p}_{k}\boldsymbol{1}_{B_{k}} = \frac{1}{Nh}\sum_{k=1}^{M}\boldsymbol{1}_{B_{k}}(x)\sum_{n=1}^{N}\boldsymbol{1}_{B_{k}}(X_{n})\,,
+                \end{equation*}
+        
+                is a random function of $\mathcal{H}_{n}$ associated to $\{X_{n}\}_{n=1}^{N}$.
+        }
 
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<1>[keepaspectratio, width=\textwidth]{./figures/slide_09_1.png}%
-                        \includegraphics<2>[keepaspectratio, width=\textwidth]{./figures/slide_09_2.png}%
-                        \includegraphics<3->[keepaspectratio, width=\textwidth]{./figures/slide_09_4.png}%
-                \end{figure}
+        \vspace{0.0cm}
+        \uncover<5->{
+                \begin{proposition}
+                        The fluctuations between the unbiased density estimator $\hat{p}_{h}$ and the bin-averaged histogram $p_{h}=\sum_{k=1}^{M}p_{k}\boldsymbol{1}_{B_{K}}$, $p_{k}= \frac{1}{h}\int_{B_{k}}^{}p(x)dx$ are asymptotically Gaussian
 
-                \hfill
+                        \begin{equation*}
+                                \sqrt{N}(\hat{p}_{k}-p_{k})\stackrel{d}{\longrightarrow}\mathcal{N}\bigg(0,\frac{\pi_{k}(1-\pi_{k})}{h^{2}}\bigg)\,,\quad k=1,\dots,M\,,
+                        \end{equation*}
 
-                \column{0.68\textwidth}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<3->[keepaspectratio, width=0.75\textwidth]{./figures/slide_09_3.png}%
-                \end{figure}
-
-       \end{columns}
+                        where $\pi_{k}:=Pr[x\in B_{k}] = h p_{k}$ defines the bin probability. 
+                \end{proposition}
+        }
 \end{frame}
 
 \end{document}

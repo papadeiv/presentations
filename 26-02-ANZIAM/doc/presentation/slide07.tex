@@ -4,31 +4,44 @@
 % Slide # 7
 \begin{frame}[t, label=slide07]
         % Title
-        \frametitle{Entering large deviation theory}
+        \frametitle{Treating tipping points as rare events}
 
         % Body
         \footnotesize
-        
-        \begin{theorem}[Freidlin-Wentzell]\label{thm:freidlin_wentzell}
-                The probability of the sample paths $X^{D}=\{X_{t}\}_{t=0}^{T}$ of $dX_{t} = f(X_{t})dt + \sqrt{2D}dW_{t}$ to be located in a cylinder of radius $\delta>0$ around any (absolutely continuous) deterministic path $\phi$ decays as
 
-                \vspace{-0.4cm}
+        \begin{corollary}
+                     Consider a $1-$dimensional, conservative vector field $f$ (i.e. $\exists V$ s.t. $f = -\nabla V$) with a unique, stable fixed point $x_{0}$. Then the probability for hitting a target $x$ scales as $\text{exp}(V(x_{0})-V(x))$.
+        \end{corollary}
+
+        \uncover<2->{
+                Consider a vector field $f(x;\mu)$ with equilibria $x_{\text{stb,uns}}$. 
+
+                \vspace{2mm}
+
+                If the vector field is conservative then its potential $V(x;\mu)$ has a local minima at $a\equiv x_{\text{stb}}$ and a local maxima at $b\equiv x_{\text{uns}}$.
+        }
+
+        \vspace{4mm}
+
+        \uncover<3->{
+                Approaching a saddle-node bifurcation ($\mu\to\mu_{\text{bif}}$) we have $|x_{\text{stb}} - x_{\text{uns}}|=|a-b|\to0$, meaning that 
+
                 \begin{equation*}
-                        P[\phi]\asymp \exp\bigg(-\frac{S[\phi]}{2D}\bigg) \quad\Bigg(\text{or}\quad\lim_{D\to0}\log P\bigg(\sup_{t\in[0,T]}|X_{t}-\phi(X_{0},t)|<\delta\bigg) = -S[\phi]\Bigg)\,,
+                        V(b)-V(a)=:\Delta V\to 0\quad\Longrightarrow\quad\exp(-\Delta V)\to1.
                 \end{equation*}
+        }
 
-                where the cost of following such path is given by the rate functional 
-
+        \uncover<4->{
+                \alg{We can use the LDP as an EWS!}
                 \begin{equation*}
-                        S[\phi] = \int_{0}^{T}L(\dot{\phi},\phi,t)dt = \frac{1}{2}\int_{0}^{T}\Big(\dot{\phi}-f(\phi)\Big)^{2}dt\,,
+                        \malg{\text{\textbf{exp}}(-\Delta V) = 
+                                \begin{cases}
+                                        0\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to\infty\,,\\
+                                        1\,,\quad \text{if}\;\;|\mu-\mu_{\text{bif}}|\to0\,. 
+                                \end{cases}}
                 \end{equation*}
-        \end{theorem}
+        }
 
-        \vspace{0.5cm}
-        In the singular limit $\varepsilon\to0$ the most likely path $\phi(X_{0},t)\in H^{1}(\mathbb{R}^{d},[0,T])$ is the minimiser of $S[\phi]$ and it satisfies the Euler-Lagrange equations (ELEs)
-        \begin{equation*}
-                \frac{d}{dt}\bigg(\frac{\partial}{\partial\dot{\phi}}\,L(\dot{\phi},\phi,t)\bigg) - \frac{\partial}{\partial\phi}\,L(\dot{\phi},\phi,t) = 0\,.
-        \end{equation*}
 \end{frame}
 
 \end{document}

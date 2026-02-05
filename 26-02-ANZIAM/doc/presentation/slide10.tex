@@ -1,41 +1,44 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
 
-% Slide # 10 
+% Slide # 10
 \begin{frame}[t, label=slide10]
         % Title
-        \frametitle{Functional framework}
+        \frametitle{\alr{Inferring critical transitions from timeseries}}
 
         % Body
         \footnotesize
-        
-        An observed sample path can be thought of as a sequence $\{X_{n}\}_{n=1}^{N}\subset I \subseteq \mathbb{R}$ of $N>0$ i.i.d. random variables sampled from $p(x)\in H:=\{f\in L^{2}(\mathbb{R})\;:\;\int_{\mathbb{R}}^{}f(x)dx = 1\}$.
 
-        \vspace{0.25cm}
-        \uncover<2->{
-                Fixing $h>0$ identifies a unique partition $I_{h}$ of $I$ into $0 < M < N$ homogeneous (i.e. fixed width), disjoint subintervals
-                \begin{equation*}
-                        I_{h} = \cup_{k=1}^{M}B_{k}\,,\quad B_{k} = \big[\min\{X_{t}\} + (k-1)h, \min\{X_{t}\} + kh\big)\,.
-                \end{equation*}
-        }
+        Given the (empirical) histogram $\{\hat{x}_{k},\hat{p}_{k}\}$ over the bins' center points $\hat{x}_{k}$, find
+        \begin{equation*}
+                \boldsymbol{\theta}^{*}=(c_{j})_{j=0,\dots,3}=\text{argmin}_{\boldsymbol{\theta}\in \mathbb{R}^{4}}\sqrt{\sum_{k=1}^{M}\big(\exp(-U(\hat{x}_{k};\,\boldsymbol{\theta})) - \hat{p}_{k}\big)^{2}} \,. 
+        \end{equation*}
 
-        \uncover<3->{
-                Construct the subspace of $H$ of piecewise constant functions
-                \begin{equation*}
-                        \mathcal{H}_{h}:=\bigg\{f\in H\;:\;f(x)=\sum_{k=1}^{M}c_{k}\boldsymbol{1}_{B_{k}}(x)\bigg\}\,.
-                \end{equation*}
-        }
+        \begin{columns}[T]
+                
+                \column{0.7\textwidth}
 
-        \uncover<4->{
-                \begin{proposition}
-                     There exists a unique minimiser of
-                     \begin{equation*}
-                         p_{h}:=\text{argmin}_{f\in \mathcal{H}_{h}}||f - p||_{H}\,,
-                     \end{equation*}
-                     and it coincides with the bin-averaged true density, i.e. $c_{k}=\frac{1}{h}\int_{B_{k}}^{}p(x)dx=:p_{k}$.
-                \end{proposition}
-        }
+                \begin{figure}[H]
+                    \centering 
+                    \includegraphics<2->[keepaspectratio, width=\textwidth]{./figures/slide_10_1.png}%
+                \end{figure}
 
+                        \hfill
+
+                \column{0.3\textwidth}
+
+                \begin{figure}[H]
+                        \hspace{-1.00cm}
+                        \includegraphics<3->[keepaspectratio, width=0.75\textwidth]{./figures/slide_10_2.png}%
+                \end{figure}
+
+                \begin{figure}[H]
+                        \vspace{-0.70cm}
+                        \hspace{-1.00cm}
+                        \includegraphics<4->[keepaspectratio, width=0.75\textwidth]{./figures/slide_10_3.png}%
+                \end{figure}
+
+       \end{columns}
 \end{frame}
 
 \end{document}

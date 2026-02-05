@@ -9,7 +9,7 @@
         % Body
         \footnotesize
 
-        Consider $n-$dimensional Itô processes with additive diffusion $\sigma = \sqrt{2D}>0$ and non-autonomous drift
+        Consider $n-$dimensional Itô processes with non-autonomous drift and additive noise
 
         \begin{equation*}
            \begin{cases}
@@ -18,25 +18,45 @@
            \end{cases}
         \end{equation*}
 
-        \vspace{0.5cm}
         \uncover<2->{
-                The law of evolution of the parameter is a\alr{parametrised family of shifts}in time connecting the past-limit (i.e. $\mu(t)\to\mu_{-}$, $t\to-\infty$) to the future-limit system (i.e. $\mu(t)\to\mu_{+}$, $t\to+\infty$).
+                $\Lambda_{\varepsilon}$ is a\alr{parametrised family of shifts} connecting the past-limit (i.e. $\mu(t)\to\mu_{-}$, $t\to-\infty$) to the future-limit system (i.e. $\mu(t)\to\mu_{+}$, $t\to+\infty$).
         }
 
-        \vspace{0.5cm}
+        \vspace{0.25cm}
         \uncover<3->{
-                For any given $\mu$ an\alr{equilibrium}of the system is a state $X^{*}\in \mathbb{R}^{n}$ s.t. $f(X^{*},\mu) = 0$. 
+                $X^{*}$ is a\alr{quasi-steady equilibrium}(QSE) of the system if $f(X^{*},\mu(t)) = 0$. 
         }
 
-        \vspace{0.5cm}
+        \vspace{0.25cm}
         \uncover<4->{
-                Since $\mu = \mu(t)$ then the equilbrium itself drifts in state space, i.e. $X^{*} = X_{t}^{*}$ is a\alr{quasi-steady equilibrium (QSE)}.
+                If a QSE is created, destroyed or changes stability then a\alr{bifurcation}has occured.
         }
 
-        \vspace{0.5cm}
+        \vspace{0.25cm}
         \uncover<5->{
-                If at any point $\mu(t)$ a QSE is created, destroyed or it changes its stability then a\alr{bifurcation}has occured.
+                Suppose $\Lambda_{\varepsilon}(\mu_{-},\mu_{+}) = \frac{\mu_{-}+\mu_{+}}{2} + \frac{\mu_{+} - \mu_{-}}{2}\tanh(\varepsilon(t-t_{0}))$:
         }
+
+        \vspace{-0.45cm}
+        \begin{columns}[T]
+                
+                \column{0.5\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<6->[keepaspectratio, width=0.6\textwidth]{./figures/slide_03_1.png}%
+                \end{figure}
+
+                \hfill
+
+                \column{0.5\textwidth}
+
+                \begin{figure}[H]
+                        \centering 
+                        \includegraphics<7>[keepaspectratio, width=0.6\textwidth]{./figures/slide_03_2.png}%
+                \end{figure}
+
+        \end{columns}
 \end{frame}
 
 \end{document}

@@ -4,41 +4,42 @@
 % Slide # 4
 \begin{frame}[t, label=slide04]
         % Title
-        \frametitle{Tipping mechanisms}
+        \frametitle{\alr{Inferring}\alf{critical transitions}\alr{from}\alf{timeseries}}
 
         % Body
         \footnotesize
 
-        We want to differentiate between bifurcation-induced (B-tipping) from rate-induced (R-tipping) critical transitions.
+        Consider the following Itô process in saddle-node normal form
 
-        \vspace{0.5cm}
+        \begin{equation*}
+                X_{t} = X_{0} \; + \int_{0}^{t}(-\mu - X_{s}^{2})\,ds \; + \; \int_{0}^{t}\sqrt{2D}dW_{s}\,.
+        \end{equation*}
 
-        The former type (usually) happens when the parameter shift is too abrupt. 
+        \uncover<2->{
+                Assuming we start the process at fixed $X_{0} = \sqrt{-\mu} + \delta$ ($\delta \ll 1$), a solution in a neighbour of $X_{t}=\sqrt{-\mu}$ is well approximated by the solution of the linear Ornstein-Uhlenbeck process (OUP)
+        
+                \begin{equation*}
+                        X_{t} = \theta \int_{0}^{t}(\sqrt{-\mu}-X_{s})\,ds \; + \; \sqrt{2D} \int_{0}^{t}dW_{s}\,,
+                \end{equation*}
 
-        \vspace{0.5cm}
+                which admits a stationary probability density with $\theta = -2\sqrt{-\mu}$ and covariance
 
-        Suppose $\Lambda_{\varepsilon}(\mu_{-},\mu_{+}) = \frac{\mu_{-}+\mu_{+}}{2} + \frac{\mu_{+} - \mu_{-}}{2}\tanh(\varepsilon(t-t_{0}))$:
+                \begin{equation*}
+                        \text{Cov}[X_{s},X_{t}] = \frac{D}{\theta}e^{-\theta (t-s)}\,,\quad s<t\,.
+                \end{equation*}
+        }
 
-        \begin{columns}[T]
-                
-                \column{0.5\textwidth}
+        \uncover<3->{
+                If we now consider instantaneous time increments (i.e. $t\to s$) then
 
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<2-3>[keepaspectratio, width=\textwidth]{./figures/slide_04_1.png}%
-                \end{figure}
-
-                \hfill
-
-                \column{0.5\textwidth}
-
-                \begin{figure}[H]
-                        \centering 
-                        \includegraphics<3>[keepaspectratio, width=\textwidth]{./figures/slide_04_2.png}%
-                \end{figure}
-
-        \end{columns}
-
+                \begin{equation*}
+                        \text{Cov}[X_{s},X_{t}]\to \text{Var}[X_{t}] = \frac{D}{\theta}\to 
+                        \begin{cases}
+                                0\,, \quad\mu\to\ - \infty\,,\\
+                                \infty\,, \quad\mu\to 0\,.
+                        \end{cases}
+                \end{equation*}
+        }
 \end{frame}
 
 \end{document}

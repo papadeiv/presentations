@@ -4,42 +4,23 @@
 % Slide # 5
 \begin{frame}[t, label=slide05]
         % Title
-        \frametitle{\alr{Inferring}\alf{critical transitions}\alr{from}\alf{timeseries}}
+        \frametitle{\alf{Inferring critical transitions from timeseries}}
 
         % Body
         \footnotesize
 
-        Consider the following Itô process in saddle-node normal form
-
         \begin{equation*}
-                X_{t} = X_{0} \; + \int_{0}^{t}(-\mu - X_{s}^{2})\,ds \; + \; \int_{0}^{t}\sqrt{2D}dW_{s}\,.
-        \end{equation*}
-
-        \uncover<2->{
-                Assuming we start the process at fixed $X_{0} = \sqrt{-\mu} + \delta$ ($\delta << 1$), a solution in a neighbour of $X_{t}=\sqrt{-\mu}$ is well approximated by the solution of the linear Ornstein-Uhlenbeck process (OUP)
-        
-                \begin{equation*}
-                        X_{t} = \theta \int_{0}^{t}(\sqrt{-\mu}-X_{s})\,ds \; + \; \sqrt{2D} \int_{0}^{t}dW_{s}\,,
-                \end{equation*}
-
-                which admits a stationary probability density with $\theta = -2\sqrt{-\mu}$ and covariance
-
-                \begin{equation*}
-                        \text{Cov}[X_{s},X_{t}] = \frac{D}{\theta}e^{-\theta (t-s)}\,,\quad s<t\,.
-                \end{equation*}
-        }
-
-        \uncover<3->{
-                If we now consider instantaneous time increments (i.e. $t\to s$) then
-
-                \begin{equation*}
-                        \text{Cov}[X_{s},X_{t}]\to \text{Var}[X_{t}] = \frac{D}{\theta}\to 
-                        \begin{cases}
+             f(X_{t};\mu) = -\mu - X_{t}^{2}\quad\Longrightarrow\quad\text{Var}[X_{t}] = \frac{D}{\theta}\to 
+                          \begin{cases}
                                 0\,, \quad\mu\to\ - \infty\,,\\
                                 \infty\,, \quad\mu\to 0\,.
-                        \end{cases}
-                \end{equation*}
-        }
+                          \end{cases}
+        \end{equation*}
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[keepaspectratio, width=\textwidth]{./figures/slide_05.png}%
+        \end{figure}
 \end{frame}
 
 \end{document}

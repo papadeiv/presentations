@@ -2,40 +2,20 @@
 \begin{document}
 
 % Slide # 11
-\begin{frame}[t, label=slide11]
+\begin{frame}[label=slide11]
         % Title
-        \frametitle{Maximum likelihood estimation}
+        \frametitle{Thank you!}
 
+        \vspace{-1cm}
         % Body
-        \footnotesize
+        \nocite{*}
+        \bibliography{references}
+        \bibliographystyle{amsplain}
 
-        The (empirical) histogram associated to the sample $\{X_{n}\}_{n=1}^{N}$
+        \bigskip
+        \bigskip
 
-        \begin{equation*}
-                \hat{p}_{h}(x) = \sum_{k=1}^{M}\hat{p}_{k}\boldsymbol{1}_{B_{k}} = \frac{1}{Nh}\sum_{k=1}^{M}\boldsymbol{1}_{B_{k}}(x)\sum_{n=1}^{N}\boldsymbol{1}_{B_{k}}(X_{n})\,,
-        \end{equation*}
-        
-        is a random function of $\mathcal{H}_{n}$ and an unbiased estimator of $p_{h}$.
-
-        \uncover<2->{
-                \begin{proposition}
-                        The fluctuations between the unbiased density estimator $\hat{p}_{h}$ and the bin-averaged histogram $p_{h}$ are asymptotically Gaussian
-
-                        \begin{equation*}
-                                \sqrt{N}(\hat{p}_{k}-p_{k})\stackrel{d}{\longrightarrow}\mathcal{N}\bigg(0,\frac{\pi_{k}(1-\pi_{k})}{h^{2}}\bigg)\,,\quad k=1,\dots,M\,,
-                        \end{equation*}
-
-                        where $\pi_{k}:=Pr[x\in B_{k}] = h p_{k}$ defines the bin probability. 
-                \end{proposition}
-        }
-       
-        \uncover<3->{
-                Given the (empirical) histogram $\{\hat{x}_{k},\hat{p}_{k}\}$ over the bins' center points $\hat{x}_{k}$, find
-                \begin{equation*}
-                        \boldsymbol{\theta}^{*}=(c_{j})_{j=0,\dots,3}=\text{argmin}_{\boldsymbol{\theta}\in \mathbb{R}^{4}}\sqrt{\sum_{k=1}^{M}\big(\exp(-U(\hat{x}_{k};\,\boldsymbol{\theta})) - \hat{p}_{k}\big)^{2}} \,. 
-                \end{equation*}
-        }        
-
+        \hyperlink{slide02}{\beamergotobutton{Go to the beginning}}
 \end{frame}
 
 \end{document}
